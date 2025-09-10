@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZeroMax Moving - Your Trusted Moving Partner">
+    <link rel="stylesheet" href="{% static 'homepage/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>ZeroMax Moving</title>
+</head>
+<body>
+    <header>
+        <div class="logo">ZeroMax Moving</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <img src="placeholder-banner.jpg" alt="Hero Banner">
+        <h1>Your Trusted Moving Partner</h1>
+    </section>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Contact us: (123) 456-7890 | email@example.com</p>
+        <p>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+        <p>&copy; 2023 Moving Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>

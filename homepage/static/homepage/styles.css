@@ -1,0 +1,283 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #131c45;
+    background-color: #f9f7f3;
+    margin: 0;
+}
+
+/* Header/Navbar */
+header {
+    background-color: #131c45;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #df732d;
+}
+
+header .cta-button {
+    background-color: #df732d;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+header .cta-button:hover {
+    background-color: #b95a22;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, #131c45, #f9f7f3), url('../static/images/hero-bg.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+}
+
+.hero .cta-button {
+    background-color: #df732d;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #b95a22;
+}
+
+/* Services Section */
+.services {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.services h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #f9f7f3;
+    border: 1px solid #131c45;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item img {
+    max-width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.service-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* Quote Form */
+.quote-form {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.quote-form h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.quote-form form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.quote-form button {
+    background-color: #df732d;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.quote-form button:hover {
+    background-color: #b95a22;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-item {
+    background-color: #f9f7f3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* About Us */
+.about-us {
+    padding: 40px 20px;
+    background-color: #f9f7f3;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.about-us p {
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.about-us a {
+    color: #df732d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.about-us a:hover {
+    color: #b95a22;
+}
+
+/* Trust Signals */
+.trust-signals {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.trust-signals h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.trust-signals .badges img {
+    height: 50px;
+    margin: 0 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #131c45;
+    color: #ffffff;
+    padding: 20px 32px;
+    text-align: center;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: #df732d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #b95a22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
