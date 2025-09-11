@@ -16,14 +16,14 @@ export async function handler(event, context) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER,   // set in Netlify env
-      pass: process.env.EMAIL_PASS    // set in Netlify env
+      user: "zeromaxdubay@gmail.com", // A\-}eg9[dX-340qy
+      pass: "jszwfqjuvatepbgf"
     }
   });
 
   const mailOptions = {
     from: email,
-    to: process.env.DEST_EMAIL,      // set in Netlify env
+    to: "rustamovumar0@gmail.com",
     subject: `New Quote Request from ${name} - ${new Date().toLocaleString()}`,
     html: `
       <h2>New Quote Request</h2>
