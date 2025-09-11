@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroMax Movers UAE | Professional Moving Services</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(245, 245, 245, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            background-color: rgba(249, 250, 251, 0.8);
+        }
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        .city {
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .city:hover {
+            transform: translateY(-2px);
+            border-color: #3b82f6; /* Tailwind blue-500 */
+        }
+
+        .city.border-blue-500 {
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="truck" class="h-8 w-8 text-blue-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">ZeroMax Movers</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About Us</a>
+                        <a href="#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Reviews</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Services</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">About Us</a>
+                <a href="#pricing" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Pricing</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Reviews</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 md:pt-32 md:pb-48 bg-cover bg-center" style="background-image: url('http://static.photos/cityscape/1200x630/42');">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:w-2/3 lg:w-1/2" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Reliable Local & Long-Distance Moving in the UAE</h1>
+                <p class="text-xl text-gray-700 mb-8">Professional moving services with Swedish expertise, now serving cities across the UAE.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Get Your Quote</a>
+                    <a href="#about" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-8 rounded-lg border border-gray-300 transition duration-300 transform hover:scale-105">Learn More</a>
+                </div>
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <div class="flex items-center bg-white bg-opacity-80 px-4 py-2 rounded-lg">
+                        <i data-feather="shield" class="text-blue-600 mr-2"></i>
+                        <span class="text-sm font-medium">Fully Insured</span>
+                    </div>
+                    <div class="flex items-center bg-white bg-opacity-80 px-4 py-2 rounded-lg">
+                        <i data-feather="award" class="text-blue-600 mr-2"></i>
+                        <span class="text-sm font-medium">10+ Years Experience</span>
+                    </div>
+                    <div class="flex items-center bg-white bg-opacity-80 px-4 py-2 rounded-lg">
+                        <i data-feather="check-circle" class="text-blue-600 mr-2"></i>
+                        <span class="text-sm font-medium">Licensed in UAE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
+            <a href="#services" class="text-gray-700 hover:text-blue-600">
+                <i data-feather="chevron-down" class="h-8 w-8 animate-bounce"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Moving Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive moving solutions tailored to your needs across the UAE</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/cityscape/640x360/1');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="home" class="text-blue-600 h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Local Moves</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Stress-free relocation within your city with our professional team handling every detail.</p>
+                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/travel/640x360/2');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="map" class="text-blue-600 h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Long-Distance Moves</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Seamless relocation between UAE cities with our specialized long-distance moving services.</p>
+                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
+                    </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/office/640x360/3');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="box" class="text-blue-600 h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Packing Services</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Professional packing using high-quality materials to ensure your belongings arrive safely.</p>
+                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
+                    </div>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/workspace/640x360/4');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="briefcase" class="text-blue-600 h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Office Moves</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Minimize business downtime with our efficient commercial relocation services.</p>
+                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
+                    </div>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/warehouse/640x360/5');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="database" class="text-blue-600 h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Storage Solutions</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Secure, climate-controlled storage facilities for short or long-term needs.</p>
+                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
+                    </div>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/furniture/640x360/6');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="settings" class="text-blue-600 h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Specialty Items</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Expert handling of pianos, artwork, antiques, and other valuable items.</p>
+                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0" data-aos="fade-right">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg h-96">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('http://static.photos/team/640x360/7');"></div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6">
+                            <h3 class="text-white text-lg font-medium">Our Professional Team in Dubai</h3>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full shadow-sm">
+                            <span class="text-sm font-medium text-blue-600">Since 2010</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Swedish Quality Meets UAE Efficiency</h2>
+                    <p class="text-gray-600 mb-6">Founded in Stockholm with over a decade of experience, ZeroMax Movers has brought Scandinavian precision and reliability to the UAE moving industry. Our team combines Swedish attention to detail with local expertise to deliver exceptional service.</p>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Why Choose ZeroMax Movers?</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-700">Fully licensed and insured for your peace of mind</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-700">Professional packing with eco-friendly materials</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-700">GPS-tracked vehicles for real-time updates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-700">Bilingual staff fluent in English and Arabic</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-700">24/7 customer support throughout your move</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                        Contact our team <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="quote" class="py-20 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Get Your Free Moving Quote</h2>
+                <p class="text-xl text-blue-100">Fill out the form below and we'll get back to you within 24 hours with a customized estimate.</p>
+            </div>
+            <form id="movingForm" class="bg-white rounded-xl shadow-xl p-6 md:p-8 text-gray-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="user" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="text" id="name" name="name" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="mail" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="email" id="email" name="email" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="phone" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="tel" id="phone" name="phone" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="move-type" class="block text-sm font-medium text-gray-700 mb-1">Move Type *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="truck" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <select id="move-type" name="move-type" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select move type</option>
+                                <option value="local">Local Move (within city)</option>
+                                <option value="long-distance">Long Distance (between UAE cities)</option>
+                                <option value="international">International (outside UAE)</option>
+                                <option value="office">Office/Business Move</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="from" class="block text-sm font-medium text-gray-700 mb-1">Moving From *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="map-pin" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="text" id="from" name="from" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Current address">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="to" class="block text-sm font-medium text-gray-700 mb-1">Moving To *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="map-pin" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="text" id="to" name="to" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="New address">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Moving Date *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="calendar" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="date" id="date" name="date" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="size" class="block text-sm font-medium text-gray-700 mb-1">Approx. Size *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="box" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <select id="size" name="size" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select size</option>
+                                <option value="studio">Studio Apartment (1-2 rooms)</option>
+                                <option value="1-bedroom">1 Bedroom (3-4 rooms)</option>
+                                <option value="2-bedroom">2 Bedroom (5-6 rooms)</option>
+                                <option value="3-bedroom">3+ Bedroom (7+ rooms)</option>
+                                <option value="villa">Villa/Large Home</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">Special Requirements</label>
+                    <textarea id="notes" name="notes" rows="3" class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Piano, fragile items, storage needs, etc."></textarea>
+                </div>
+                <div class="flex items-center mb-4">
+                    <input id="agree" name="agree" type="checkbox" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="agree" class="ml-2 block text-sm text-gray-700">I agree to receive a quote and communications from ZeroMax Movers</label>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                    <i data-feather="send" class="mr-2 h-5 w-5"></i> Get Your Free Quote
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Moving Cost Calculator</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get a detailed estimate for your move</p>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-xl shadow-lg" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Rooms -->
+                <div>
+                    <label for="rooms" class="block text-sm font-medium text-gray-700 mb-2">Number of Rooms *</label>
+                    <select id="rooms" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="1">Studio / 1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                        <option value="4">4 Rooms</option>
+                        <option value="5">5+ Rooms</option>
+                    </select>
+                </div>
+
+                <!-- Floor Area -->
+                <div>
+                    <label for="area" class="block text-sm font-medium text-gray-700 mb-2">Approx. Floor Area (sq.m.) *</label>
+                    <input type="number" id="area" min="10" max="500" value="50" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Move Type -->
+                <div>
+                    <label for="moveType" class="block text-sm font-medium text-gray-700 mb-2">Move Type *</label>
+                    <select id="moveType" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="local">Local Move</option>
+                        <option value="intercity">Intercity</option>
+                        <option value="international">International</option>
+                    </select>
+                </div>
+
+                <!-- Distance -->
+                <div>
+                    <label for="distance" class="block text-sm font-medium text-gray-700 mb-2">Distance (km)</label>
+                    <input type="number" id="distance" min="1" max="1000" value="10" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Floor Level -->
+                <div>
+                    <label for="floor" class="block text-sm font-medium text-gray-700 mb-2">Floor / Elevator Access *</label>
+                    <select id="floor" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="ground">Ground / Elevator Available</option>
+                        <option value="1-3">1-3 Floors / Stairs</option>
+                        <option value="4+">4+ Floors / No Elevator</option>
+                    </select>
+                </div>
+
+                <!-- Vehicle Size -->
+                <div>
+                    <label for="vehicle" class="block text-sm font-medium text-gray-700 mb-2">Vehicle Size *</label>
+                    <select id="vehicle" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="small">Small Truck</option>
+                        <option value="medium">Medium Truck</option>
+                        <option value="large">Large Truck</option>
+                    </select>
+                </div>
+
+                <!-- Extra Services -->
+                <div class="col-span-1 md:col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Extra Services</label>
+                    <div class="flex flex-col space-y-2">
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="packing">
+                            <span class="ml-2 text-gray-700">Packing Service (+AED 500)</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="storage">
+                            <span class="ml-2 text-gray-700">Storage (+AED 300)</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="fragile">
+                            <span class="ml-2 text-gray-700">Fragile Items Handling (+AED 200)</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="insurance">
+                            <span class="ml-2 text-gray-700">Insurance (+AED 400)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <div class="mt-6">
+                <button id="calculateBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md text-center transition duration-300 transform hover:scale-105">
+                    Calculate Estimate
+                </button>
+            </div>
+
+            <!-- Result -->
+            <div id="result" class="mt-6 p-4 rounded-md bg-green-50 text-green-800 font-bold text-lg hidden">
+                Estimated Cost: AED 0
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trusted by thousands of families and businesses across the UAE</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/1" alt="Sarah K.">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Sarah K.</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400">
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Dubai to Abu Dhabi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Moving from Dubai to Abu Dhabi was stressful until we found ZeroMax Movers. Their team handled everything with such care and professionalism. Not a single item damaged and they finished ahead of schedule!"</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/2" alt="Ahmed R.">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Ahmed R.</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400">
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Office Relocation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"We relocated our entire office in Dubai Marina with ZeroMax Movers. Their team worked after hours to minimize disruption to our business. Everything was set up perfectly in our new space by morning."</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/3" alt="Elena S.">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Elena S.</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400">
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Stockholm to Dubai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"As a Swedish expat, I was thrilled to find a moving company with Scandinavian roots. They understood exactly how to handle my European furniture and artwork. The whole international move was seamless."</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#testimonials" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                    Read more testimonials <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">We Serve All Major UAE Cities</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Reliable moving services across the Emirates</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Map -->
+            <div data-aos="fade-right">
+                <div id="uaeMap" class="h-96 rounded-xl overflow-hidden"></div>
+            </div>
+
+            <!-- Cities -->
+            <div data-aos="fade-left">
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Dubai -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.2048" data-lng="55.2708">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Dubai</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">All areas including Palm Jumeirah, Downtown, Marina, JBR, and more</p>
+                    </div>
+
+                    <!-- Abu Dhabi -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="24.4539" data-lng="54.3773">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Abu Dhabi</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Covering Yas Island, Reem Island, Khalifa City, and all main districts</p>
+                    </div>
+
+                    <!-- Sharjah -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.3463" data-lng="55.4209">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Sharjah</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Full coverage including Al Khan, Al Nahda, and University City</p>
+                    </div>
+
+                    <!-- Ajman -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.4052" data-lng="55.5136">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Ajman</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Service across all residential and commercial areas</p>
+                    </div>
+
+                    <!-- Ras Al Khaimah -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.8007" data-lng="55.9762">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Ras Al Khaimah</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Moving services throughout the emirate</p>
+                    </div>
+
+                    <!-- Fujairah -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.1288" data-lng="56.3265">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Fujairah</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Complete relocation solutions</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                        Check service availability in your area <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Moving Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Simple, transparent steps for a stress-free move</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
+                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
+                            <i data-feather="clipboard" class="text-blue-600 h-8 w-8"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">1. Get a Quote</h3>
+                    <p class="text-gray-600">Fill out our simple form or call for a free estimate</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
+                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
+                            <i data-feather="calendar" class="text-blue-600 h-8 w-8"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">2. Schedule</h3>
+                    <p class="text-gray-600">Choose your moving date and confirm details</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
+                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
+                            <i data-feather="package" class="text-blue-600 h-8 w-8"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">3. Packing Day</h3>
+                    <p class="text-gray-600">Our team handles everything with care and precision</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
+                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
+                            <i data-feather="home" class="text-blue-600 h-8 w-8"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">4. Delivery</h3>
+                    <p class="text-gray-600">We deliver and set up your belongings in your new space</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#quote" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                    Start Your Move Today <i data-feather="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Answers to common questions about moving in the UAE</p>
+            </div>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">How far in advance should I book my move?</h3>
+                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
+                    </div>
+                    <div class="mt-4 hidden text-gray-600">
+                        <p>We recommend booking at least 2-3 weeks in advance, especially during peak moving seasons (summer months and beginning/end of school terms). However, we can often accommodate last-minute moves depending on availability.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">What items are prohibited from being moved?</h3>
+                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
+                    </div>
+                    <div class="mt-4 hidden text-gray-600">
+                        <p>For safety and legal reasons, we cannot transport hazardous materials including flammable liquids, compressed gases, firearms, ammunition, perishable food items, plants, and pets. We also recommend you carry valuable personal items like jewelry and important documents yourself.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you provide packing materials?</h3>
+                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
+                    </div>
+                    <div class="mt-4 hidden text-gray-600">
+                        <p>Yes, we offer high-quality packing materials including boxes in various sizes, bubble wrap, packing paper, mattress covers, and furniture pads. These can be included in your package or purchased separately. Our premium and deluxe packages include packing materials.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">How are fragile items handled?</h3>
+                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
+                    </div>
+                    <div class="mt-4 hidden text-gray-600">
+                        <p>Our team is trained in special techniques for packing and transporting fragile items. We use extra padding, custom crating when needed, and clearly mark fragile boxes. Glass, artwork, and electronics are given special attention. You can also request our premium packing service for valuable items.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">What happens if something gets damaged during the move?</h3>
+                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
+                    </div>
+                    <div class="mt-4 hidden text-gray-600">
+                        <p>While we take every precaution to prevent damage, in the rare case that something occurs, we have comprehensive insurance coverage. Our team will document any damage immediately and guide you through the claims process. Our standard liability coverage is included, with options to upgrade for additional protection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                    Have more questions? Contact us <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6">Contact ZeroMax Movers UAE</h2>
+                    <p class="text-gray-300 mb-8">Get in touch with our moving specialists for any questions or to schedule your relocation.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-600 rounded-lg p-3">
+                                <i data-feather="phone" class="h-6 w-6"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Phone</h3>
+                                <p class="text-gray-300">+971 4 123 4567</p>
+                                <p class="text-sm text-gray-400">Available 24/7 for emergencies</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-600 rounded-lg p-3">
+                                <i data-feather="mail" class="h-6 w-6"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Email</h3>
+                                <p class="text-gray-300">info@zeromaxmovers.ae</p>
+                                <p class="text-sm text-gray-400">Response within 2 business hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-600 rounded-lg p-3">
+                                <i data-feather="map-pin" class="h-6 w-6"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">UAE Offices</h3>
+                                <p class="text-gray-300">Dubai: Al Quoz Industrial Area, Warehouse #12</p>
+                                <p class="text-gray-300">Abu Dhabi: Mussafah Industrial Area, Unit 5B</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-full p-3 transition duration-300">
+                                <i data-feather="facebook" class="h-5 w-5"></i>
+                            </a>
+                            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-full p-3 transition duration-300">
+                                <i data-feather="instagram" class="h-5 w-5"></i>
+                            </a>
+                            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-full p-3 transition duration-300">
+                                <i data-feather="linkedin" class="h-5 w-5"></i>
+                            </a>
+                            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-full p-3 transition duration-300">
+                                <i data-feather="youtube" class="h-5 w-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 md:p-8" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form id="contactForm" action="#" method="POST" class="space-y-4">
+                        <div class="mb-6">
+                            <label for="contact-name" class="block text-sm font-medium text-gray-300 mb-2">Name *</label>
+                            <input type="text" id="contact-name" name="contact-name" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+                            <input type="email" id="contact-email" name="contact-email" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                            <input type="tel" id="contact-phone" name="contact-phone" class="w-full bg-gray-700 border border-gray-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-subject" class="block text-sm font-medium text-gray-300 mb-2">Subject *</label>
+                            <select id="contact-subject" name="contact-subject" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select a subject</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="question">General Question</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                            <textarea id="contact-message" name="contact-message" rows="4" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 transform hover:scale-105">
+                            Send Message <i data-feather="send" class="ml-2 h-5 w-5 inline"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i data-feather="truck" class="h-8 w-8 text-blue-400"></i>
+                        <span class="ml-2 text-xl font-bold text-white">ZeroMax Movers</span>
+                    </div>
+                    <p class="text-sm mb-4">Professional moving services with Swedish expertise, now serving the UAE.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-feather="facebook" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-feather="instagram" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-feather="linkedin" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:text-white">Local Moves</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Long-Distance Moves</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Packing Services</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Storage Solutions</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Office Moves</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Our Team</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Insurance</a></li>
+                        <li><a href="#" class="text-sm hover:text-white">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="flex justify-center md:order-2 space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <i data-feather="facebook" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Instagram</span>
+                            <i data-feather="instagram" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Twitter</span>
+                            <i data-feather="twitter" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">LinkedIn</span>
+                            <i data-feather="linkedin" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                    <div class="mt-8 md:mt-0 md:order-1">
+                        <p class="text-center text-xs text-gray-400">
+                            &copy; 2025 ZeroMax Movers UAE. All rights reserved. Part of ZeroMax Movers International AB, Stockholm, Sweden.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="formMessage" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-md shadow-lg hidden z-50 max-w-sm w-full text-center transition-all duration-300">
+  Message
+</div>
+
+
+    <script>
+        const movingForm = document.getElementById("movingForm");
+const messageBox = document.getElementById("formMessage"); // same message box for both forms
+
+function showMessage(text, type = "success") {
+  messageBox.textContent = text;
+  if(type === "success"){
+    messageBox.classList.remove("bg-red-100","border-red-400","text-red-700");
+    messageBox.classList.add("bg-green-100","border-green-400","text-green-700");
+  } else {
+    messageBox.classList.remove("bg-green-100","border-green-400","text-green-700");
+    messageBox.classList.add("bg-red-100","border-red-400","text-red-700");
+  }
+  messageBox.classList.remove("hidden");
+  setTimeout(() => messageBox.classList.add("hidden"), 4000);
+}
+
+movingForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  const formData = new FormData(movingForm);
+  const data = {};
+  formData.forEach((v,k)=>data[k]=v);
+  try {
+    const res = await fetch("/send", { method: "POST", headers: { "Content-Type":"application/json"}, body: JSON.stringify(data)});
+    showMessage(await res.text(), "success");
+    movingForm.reset();
+  } catch {
+    showMessage("Failed to send. Try again.", "error");
+  }
+});
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  const formData = new FormData(contactForm);
+  const data = {};
+  formData.forEach((v,k)=>data[k]=v);
+  try {
+    const res = await fetch("/contact", { method:"POST", headers:{ "Content-Type":"application/json"}, body: JSON.stringify(data)});
+    showMessage(await res.text(), "success");
+    contactForm.reset();
+  } catch {
+    showMessage("Failed to send. Try again.", "error");
+  }
+});
+
+</script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize feather icons
+        feather.replace();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const answer = this.querySelector('div.hidden');
+                const icon = this.querySelector('i');
+                
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    icon.setAttribute('data-feather', 'chevron-up');
+                } else {
+                    answer.classList.add('hidden');
+                    icon.setAttribute('data-feather', 'chevron-down');
+                }
+                feather.replace();
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Initialize Leaflet map
+        const map = L.map("uaeMap").setView([23.4241, 53.8478], 6); // UAE center
+
+        // Add OpenStreetMap tiles
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18,
+        }).addTo(map);
+
+        // Add markers for all cities
+        const cityBoxes = document.querySelectorAll(".city");
+        const markers = [];
+
+        cityBoxes.forEach(city => {
+            const lat = parseFloat(city.dataset.lat);
+            const lng = parseFloat(city.dataset.lng);
+            const name = city.querySelector("h3").textContent;
+
+            const marker = L.marker([lat, lng]).addTo(map).bindPopup(name);
+            markers.push(marker);
+
+            // Click on city box -> pan/zoom to city
+            city.addEventListener("click", () => {
+                map.setView([lat, lng], 12, { animate: true });
+                marker.openPopup();
+
+                // Optional: highlight selected city
+                cityBoxes.forEach(c => c.classList.remove("border-blue-500"));
+                city.classList.add("border-blue-500");
+            });
+        });
+    });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const calculateBtn = document.getElementById("calculateBtn");
+        const resultDiv = document.getElementById("result");
+
+        calculateBtn.addEventListener("click", () => {
+            const rooms = parseInt(document.getElementById("rooms").value);
+            const area = parseFloat(document.getElementById("area").value);
+            const moveType = document.getElementById("moveType").value;
+            const distance = parseFloat(document.getElementById("distance").value);
+            const floor = document.getElementById("floor").value;
+            const vehicle = document.getElementById("vehicle").value;
+            const packing = document.getElementById("packing").checked;
+            const storage = document.getElementById("storage").checked;
+            const fragile = document.getElementById("fragile").checked;
+            const insurance = document.getElementById("insurance").checked;
+
+            let price = 0;
+
+            // Base room + area cost
+            price += rooms * 500 + area * 10;
+
+            // Distance cost
+            if(moveType === "local") price += distance * 5;
+            else if(moveType === "intercity") price += distance * 10;
+            else price += distance * 20; // international
+
+            // Floor level cost
+            if(floor === "1-3") price += 200;
+            if(floor === "4+") price += 500;
+
+            // Vehicle multiplier
+            if(vehicle === "medium") price *= 1.2;
+            if(vehicle === "large") price *= 1.5;
+
+            // Extra services
+            if(packing) price += 500;
+            if(storage) price += 300;
+            if(fragile) price += 200;
+            if(insurance) price += 400;
+
+            price = Math.ceil(price / 10) * 10;
+            resultDiv.textContent = `Estimated Cost: AED ${price}`;
+            resultDiv.classList.remove("hidden");
+        });
+    });
+    </script>
+</body>
+</html>
