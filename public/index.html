@@ -994,7 +994,12 @@ movingForm.addEventListener("submit", async e => {
   const data = {};
   formData.forEach((v,k)=>data[k]=v);
   try {
-    const res = await fetch("/send", { method: "POST", headers: { "Content-Type":"application/json"}, body: JSON.stringify(data)});
+    const res = await fetch("/.netlify/functions/send-quote", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data)
+});
+
     showMessage(await res.text(), "success");
     movingForm.reset();
   } catch {
@@ -1010,7 +1015,11 @@ contactForm.addEventListener("submit", async e => {
   const data = {};
   formData.forEach((v,k)=>data[k]=v);
   try {
-    const res = await fetch("/contact", { method:"POST", headers:{ "Content-Type":"application/json"}, body: JSON.stringify(data)});
+    const res = await fetch("/.netlify/functions/send-contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
     showMessage(await res.text(), "success");
     contactForm.reset();
   } catch {
