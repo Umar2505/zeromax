@@ -16,8 +16,8 @@ export async function handler(event, context) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL, // A\-}eg9[dX-340qy
-      pass: process.env.PASSWORD
+      user: "zeromaxdubay@gmail.com", // A\-}eg9[dX-340qy
+      pass: "jszwfqjuvatepbgf"
     }
   });
 
