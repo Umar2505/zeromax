@@ -60,6 +60,19 @@
         .city.border-blue-500 {
             border-color: #3b82f6;
         }
+        /* Hide the Google Translate top frame */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        } 
+
+        /* Prevent page from shifting down */
+        body {
+            top: 0px !important; 
+        }
+        .goog-logo-link, .goog-te-gadget span {
+            display: none !important;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -1171,13 +1184,9 @@ contactForm.addEventListener("submit", async e => {
     });
     </script>
     <script type="text/javascript">
-        function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'en,ar,fr',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-        }
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
