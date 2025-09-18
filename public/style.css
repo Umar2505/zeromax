@@ -46,7 +46,7 @@ body {
 /* Container styling */
 #google_translate_element {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 4px 6px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background: #f8f8f8;
@@ -61,7 +61,7 @@ body {
 
 /* Style the dropdown */
 .goog-te-combo {
-    padding: 6px 10px;
+    padding: 4px 6px;
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 14px;
