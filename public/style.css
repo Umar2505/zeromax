@@ -44,32 +44,3 @@ body {
     border-color: #3b82f6;
 }
 /* Container styling */
-#google_translate_element {
-    display: inline-block;
-    padding: 4px 6px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #f8f8f8;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-}
-
-/* Remove ugly Google text */
-.goog-logo-link, .goog-te-gadget span {
-    display: none !important;
-}
-
-/* Style the dropdown */
-.goog-te-combo {
-    padding: 4px 6px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-/* Optional hover effect */
-.goog-te-combo:hover {
-    border-color: #666;
-}
