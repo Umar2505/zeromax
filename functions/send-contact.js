@@ -12,14 +12,14 @@ export async function handler(event, context) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "zeromaxdubay@gmail.com", // A\-}eg9[dX-340qy
-      pass: "jszwfqjuvatepbgf"
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
     }
   });
 
   const mailOptions = {
     from: email,
-    to: "rustamovumar0@gmail.com",
+    to: process.env.PEMAIL,
     subject: `${subject} from ${name} - ${new Date().toLocaleString()}`,
     html: `
       <h2>New Contact Form Submission</h2>
