@@ -1,26 +1,25 @@
 {
-  "name": "r",
+  "name": "zeromax",
   "version": "1.0.0",
+  "description": "none",
   "main": "server.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./public/output.css --minify",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "test"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Umar2505/zeromax.git"
+  },
+  "keywords": [
+    "ggg"
+  ],
+  "author": "umar",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Umar2505/zeromax/issues"
+  },
+  "homepage": "https://github.com/Umar2505/zeromax#readme",
   "dependencies": {
-    "body-parser": "^2.2.0",
-    "dotenv": "^17.2.2",
-    "express": "^5.1.0",
-    "nodemailer": "^7.0.6"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.13"
-  },
-  "description": ""
+    "express": "^5.1.0"
+  }
 }
-

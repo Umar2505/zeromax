@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Kind Movers UAE - Professional Moving Services</title>
+    <link rel="icon" type="image/png" href="static/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#131c45',
+                        'orange': '#df732d',
+                        'beige': '#faf7f2',
+                        'soft-gray': '#f6f6f6'
+                    },
+                    fontFamily: {
+                        'heading': ['Montserrat', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #df732d 0%, #df732d 100%);
+        }
+        .counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #df732d;
+        }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(19, 28, 69, 0.8) 0%, rgba(19, 28, 69, 0.3) 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .card-hover:hover .underline-hover {
+            width: 100%;
+        }
+        .underline-hover {
+            width: 0;
+            height: 3px;
+            background: #df732d;
+            transition: width 0.3s ease;
+        }
+        .team-member {
+            transition: all 0.3s ease;
+        }
+        .team-member:hover .overlay {
+            opacity: 1;
+        }
+        .overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .milestone-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="truck" class="h-8 w-8 text-blue-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">Kind Movers</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="/about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About Us</a>
+                        <a href="#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Reviews</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a><div id="google_translate_element" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"></div></a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 md:pt-32 md:pb-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">Making Every Move in the UAE Safe, Simple, and Stress-Free</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">From our roots in Stockholm to our trusted services across the Emirates, we move with care and precision.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#story" class="bg-orange hover:bg-orange/90 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">Our Story</a>
+                    <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg border border-white/30 transition duration-300 backdrop-blur-sm">Get Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Moving Expertise -->
+    <section class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-heading font-bold mb-6">International Moving Excellence</h2>
+                    <p class="text-xl text-white/80 mb-8">With our headquarters in Stockholm and operations across the UAE, we understand the complexities of international relocations like no other moving company.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="globe" class="text-white h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Global Network</h4>
+                                <p class="text-white/80">Partnerships with certified moving companies in 50+ countries for seamless international relocations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="file-text" class="text-white h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Customs Expertise</h4>
+                                <p class="text-white/80">Complete handling of customs documentation, duty calculations, and import/export procedures.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="anchor" class="text-white h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Sea & Air Freight</h4>
+                                <p class="text-white/80">Flexible shipping options including consolidated sea freight and express air delivery services.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="users" class="text-white h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Relocation Services</h4>
+                                <p class="text-white/80">Complete expat support including home finding, school enrollment, and utility connections.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="International shipping" class="rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1566576912017-6d2f12f95512?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Customs documentation" class="rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1586864387789-628af">
+
+    <!-- Company Story -->
+    <section id="story" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-heading font-bold text-navy mb-8">Our Journey: From Stockholm to the Emirates</h2>
+                    <div class="space-y-8">
+                        <!-- Timeline Item 1 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-4 h-4 bg-orange rounded-full mt-2 mr-6"></div>
+                            <div>
+                                <div class="flex items-center mb-2">
+                                    <h3 class="text-xl font-heading font-semibold text-navy">2010</h3>
+                                    <span class="ml-4 text-gray-600">Stockholm, Sweden</span>
+                                </div>
+                                <p class="text-gray-700">Founded in Stockholm with a vision to revolutionize moving services through Scandinavian precision and customer care. Started with just 2 trucks and a commitment to excellence.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 2 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-4 h-4 bg-orange rounded-full mt-2 mr-6"></div>
+                            <div>
+                                <div class="flex items-center mb-2">
+                                    <h3 class="text-xl font-heading font-semibold text-navy">2018</h3>
+                                    <span class="ml-4 text-gray-600">Market Expansion</span>
+                                </div>
+                                <p class="text-gray-700">Expanded across Scandinavia, completing over 50,000 successful relocations. Developed our signature eco-friendly packing methods and customer care protocols.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 3 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-4 h-4 bg-orange rounded-full mt-2 mr-6"></div>
+                            <div>
+                                <div class="flex items-center mb-2">
+                                    <h3 class="text-xl font-heading font-semibold text-navy">2020</h3>
+                                    <span class="ml-4 text-gray-600">Dubai Launch</span>
+                                </div>
+                                <p class="text-gray-700">Launched operations in Dubai, bringing Swedish quality standards to the UAE market. Established partnerships with local logistics providers and obtained all necessary licenses.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 4 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-4 h-4 bg-orange rounded-full mt-2 mr-6"></div>
+                            <div>
+                                <div class="flex items-center mb-2">
+                                    <h3 class="text-xl font-heading font-semibold text-navy">2025</h3>
+                                    <span class="ml-4 text-gray-600">UAE-Wide Service</span>
+                                </div>
+                                <p class="text-gray-700">Now serving all seven Emirates with a fleet of 25+ vehicles and 60+ trained professionals. Trusted by over 15,000 families and 500+ businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Moving truck in UAE" class="rounded-2xl shadow-2xl">
+                        <div class="absolute inset-0 bg-navy/10 rounded-2xl"></div>
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                            <h4 class="font-heading font-semibold text-navy mb-2">Swedish Quality, UAE Reliability</h4>
+                            <p class="text-sm text-gray-700">Combining Scandinavian attention to detail with Middle Eastern hospitality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="py-20 bg-soft-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-heading font-bold text-navy mb-4">Our Core Values</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">The principles that guide every move we make</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-navy/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="text-navy h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Trust</h3>
+                    <p class="text-gray-600 mb-4">Your belongings are precious to us. We treat every item with the utmost care and respect, ensuring complete security throughout the moving process.</p>
+                    <div class="underline-hover"></div>
+                </div>
+                
+                <!-- Value Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-navy/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="clock" class="text-navy h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Reliability</h3>
+                    <p class="text-gray-600 mb-4">Punctual, professional, and dependable. We show up when we say we will and deliver exactly what we promise, every single time.</p>
+                    <div class="underline-hover"></div>
+                </div>
+                
+                <!-- Value Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-navy/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="heart" class="text-navy h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Customer-First</h3>
+                    <p class="text-gray-600 mb-4">Your satisfaction is our priority. We listen, adapt, and go the extra mile to make your moving experience smooth and stress-free.</p>
+                    <div class="underline-hover"></div>
+                </div>
+                
+                <!-- Value Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-navy/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="award" class="text-navy h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Excellence</h3>
+                    <p class="text-gray-600 mb-4">Continuous improvement in our methods, training, and technology ensures we maintain the highest standards in the moving industry.</p>
+                    <div class="underline-hover"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-heading font-bold mb-4">What Makes Kind Movers Different</h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto">Experience the Swedish difference in moving services across the UAE</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Difference 1 -->
+                <div class="flex items-start" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i data-feather="check" class="text-white h-5 w-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-heading font-semibold mb-2">Licensed & Fully Insured</h3>
+                        <p class="text-white/80">Complete UAE licensing with comprehensive insurance coverage up to AED 500,000 per move.</p>
+                    </div>
+                </div>
+                
+                <!-- Difference 2 -->
+                <div class="flex items-start" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i data-feather="check" class="text-white h-5 w-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-heading font-semibold mb-2">Specialized Expertise</h3>
+                        <p class="text-white/80">Expert handling of luxury apartments, villas, offices, and specialty items like pianos and artwork.</p>
+                    </div>
+                </div>
+                
+                <!-- Difference 3 -->
+                <div class="flex items-start" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i data-feather="check" class="text-white h-5 w-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-heading font-semibold mb-2">Transparent Pricing</h3>
+                        <p class="text-white/80">No hidden fees, no surprises. What we quote is what you pay, with detailed breakdowns provided.</p>
+                    </div>
+                </div>
+                
+                <!-- Difference 4 -->
+                <div class="flex items-start" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i data-feather="check" class="text-white h-5 w-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-heading font-semibold mb-2">24/7 Support</h3>
+                        <p class="text-white/80">Round-the-clock customer service with real-time tracking and emergency assistance available.</p>
+                    </div>
+                </div>
+                
+                <!-- Difference 5 -->
+                <div class="flex items-start" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i data-feather="check" class="text-white h-5 w-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-heading font-semibold mb-2">Eco-Friendly Methods</h3>
+                        <p class="text-white/80">Sustainable packing materials and fuel-efficient vehicles to minimize environmental impact.</p>
+                    </div>
+                </div>
+                
+                <!-- Difference 6 -->
+                <div class="flex items-start" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-orange w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i data-feather="check" class="text-white h-5 w-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-heading font-semibold mb-2">Multilingual Team</h3>
+                        <p class="text-white/80">Staff fluent in English, Arabic, Swedish, Hindi, and Urdu for seamless communication.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#contact" class="bg-orange hover:bg-orange/90 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105 inline-flex items-center">
+                    Get Your Free Quote <i data-feather="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Introduction -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-heading font-bold text-navy mb-4">Meet Our Leadership Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experienced professionals dedicated to making your move seamless</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Team Member 1 -->
+                <div class="team-member relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Erik Lindqvist" class="w-full h-80 object-cover">
+                        <div class="overlay absolute inset-0 bg-navy/80 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="text-xl font-heading font-bold mb-1">Erik Lindqvist</h3>
+                                <p class="text-white/80 mb-2">Founder & CEO</p>
+                                <p class="text-sm">15+ years in logistics, founded Kind Movers in Stockholm with a vision of stress-free relocations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ahmed Al-Rashid" class="w-full h-80 object-cover">
+                        <div class="overlay absolute inset-0 bg-navy/80 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="text-xl font-heading font-bold mb-1">Ahmed Al-Rashid</h3>
+                                <p class="text-white/80 mb-2">UAE Operations Director</p>
+                                <p class="text-sm">Local expertise with 12 years in UAE logistics, ensuring smooth operations across all Emirates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson" class="w-full h-80 object-cover">
+                        <div class="overlay absolute inset-0 bg-navy/80 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="text-xl font-heading font-bold mb-1">Sarah Johnson</h3>
+                                <p class="text-white/80 mb-2">Customer Experience Manager</p>
+                                <p class="text-sm">Ensures every customer receives exceptional service with her background in hospitality management.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Our Movers in Action -->
+            <div class="bg-beige rounded-3xl p-8" data-aos="fade-up">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-heading font-bold text-navy mb-4">Our Professional Moving Crew</h3>
+                    <p class="text-gray-600">Trained, uniformed, and committed to excellence</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Movers at work" class="rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Loading truck" class="rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Team discussion" class="rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1566576912017-6d2f12f95512?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Careful handling" class="rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones & Achievements -->
+    <section class="py-20 bg-navy text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-navy to-navy/80"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-heading font-bold mb-4">Our Achievements in Numbers</h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto">Milestones that reflect our commitment to excellence</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Milestone 1 -->
+                <div class="milestone-card rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter mb-4" data-count="15">0</div>
+                    <div class="text-orange text-lg font-semibold mb-2">Years in Business</div>
+                    <p class="text-white/70 text-sm">From Stockholm startup to UAE leader</p>
+                </div>
+                
+                <!-- Milestone 2 -->
+                <div class="milestone-card rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter mb-4" data-count="25000">0</div>
+                    <div class="text-orange text-lg font-semibold mb-2">Successful Moves</div>
+                    <p class="text-white/70 text-sm">Families and businesses relocated</p>
+                </div>
+                
+                <!-- Milestone 3 -->
+                <div class="milestone-card rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="counter mb-4" data-count="7">0</div>
+                    <div class="text-orange text-lg font-semibold mb-2">Emirates Served</div>
+                    <p class="text-white/70 text-sm">Complete UAE coverage</p>
+                    </div>
+                
+                <!-- Milestone 4 -->
+                <div class="milestone-card rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="counter mb-4" data-count="98">0</div>
+                    <div class="text-orange text-lg font-semibold mb-2">% Customer Satisfaction</div>
+                    <p class="text-white/70 text-sm">Based on 5,000+ reviews</p>
+                </div>
+            </div>
+            
+            <!-- Additional Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="clock" class="text-orange h-8 w-8"></i>
+                    </div>
+                    <h4 class="text-lg font-heading font-semibold mb-2">24/7 Availability</h4>
+                    <p class="text-white/70">Emergency and after-hours moving services</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="award" class="text-orange h-8 w-8"></i>
+                    </div>
+                    <h4 class="text-lg font-heading font-semibold mb-2">Award Winning</h4>
+                    <p class="text-white/70">UAE's Best Moving Company 2023 & 2024</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="700">
+                    <div class="bg-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="users" class="text-orange h-8 w-8"></i>
+                    </div>
+                    <h4 class="text-lg font-heading font-semibold mb-2">Expert Team</h4>
+                    <p class="text-white/70">60+ trained and certified moving professionals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Fleet & Equipment -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-heading font-bold text-navy mb-4">State-of-the-Art Fleet & Equipment</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Modern vehicles and professional equipment for moves of any size</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern moving truck" class="rounded-2xl shadow-2xl">
+                </div>
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-3xl font-heading font-bold text-navy mb-6">Modern Fleet, Maximum Protection</h3>
+                    <p class="text-gray-700 mb-6 text-lg">Our fleet of 25+ vehicles includes climate-controlled trucks, hydraulic lift gates, and GPS tracking systems. Each vehicle is meticulously maintained and equipped with the latest safety features.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="thermometer" class="text-orange h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-semibold text-navy">Climate-Controlled Vehicles</h4>
+                                <p class="text-gray-600">Protecting sensitive items from UAE's extreme temperatures</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="navigation" class="text-orange h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-semibold text-navy">Real-Time GPS Tracking</h4>
+                                <p class="text-gray-600">Live updates on your belongings' location and delivery status</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="settings" class="text-orange h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-semibold text-navy">Hydraulic Lift Systems</h4>
+                                <p class="text-gray-600">Safe loading and unloading of heavy furniture and appliances</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Equipment Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-soft-gray p-6 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1586864387789-628af9feed72?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Packing supplies" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h4 class="font-heading font-semibold text-navy mb-2">Premium Packing Materials</h4>
+                    <p class="text-gray-600">Eco-friendly boxes, bubble wrap, and protective covers</p>
+                </div>
+                
+                <div class="bg-soft-gray p-6 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Moving equipment" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h4 class="font-heading font-semibold text-navy mb-2">Professional Tools</h4>
+                    <p class="text-gray-600">Dollies, straps, furniture pads, and lifting equipment</p>
+                </div>
+                
+                <div class="bg-soft-gray p-6 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Storage facility" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h4 class="font-heading font-semibold text-navy mb-2">Secure Storage</h4>
+                    <p class="text-gray-600">Climate-controlled warehouses with 24/7 security</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-20 bg-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-heading font-bold text-navy mb-4">The Kind Movers Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">From initial consultation to final delivery, we've perfected every step</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Process Timeline -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-orange/30"></div>
+                
+                <div class="space-y-16">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row items-center" data-aos="fade-up">
+                        <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0 text-center md:text-right">
+                            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-heading font-bold text-navy mb-4">1. Free Consultation & Survey</h3>
+                                <p class="text-gray-700 mb-4">Our moving consultant visits your location for a comprehensive assessment. We evaluate your belongings, discuss special requirements, and provide detailed moving timeline.</p>
+                                <ul class="text-left space-y-2 text-gray-600">
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>In-home or virtual assessment</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Customized moving plan</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Transparent pricing breakdown</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="bg-orange w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-feather="clipboard" class="text-white h-8 w-8"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 mt-8 md:mt-0">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Consultation" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row-reverse items-center" data-aos="fade-up">
+                        <div class="md:w-1/2 md:pl-8 mb-8 md:mb-0 text-center md:text-left">
+                            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-heading font-bold text-navy mb-4">2. Professional Packing</h3>
+                                <p class="text-gray-700 mb-4">Our trained packers use premium materials and proven techniques. Each item is carefully wrapped, labeled, and inventoried for complete tracking and protection.</p>
+                                <ul class="text-left space-y-2 text-gray-600">
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Room-by-room systematic packing</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Specialized handling for fragiles</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></li>Digital inventory tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="bg-orange w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-feather="package" class="text-white h-8 w-8"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pr-8 mt-8 md:mt-0">
+                            <img src="https://images.unsplash.com/photo-1586864387789-628af9feed72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Professional packing" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row items-center" data-aos="fade-up">
+                        <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0 text-center md:text-right">
+                            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-heading font-bold text-navy mb-4">3. Safe Transportation</h3>
+                                <p class="text-gray-700 mb-4">Our climate-controlled trucks ensure optimal conditions during transit. GPS tracking provides real-time updates, and our drivers are trained in defensive driving techniques.</p>
+                                <ul class="text-left space-y-2 text-gray-600">
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Climate-controlled environment</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Real-time GPS tracking</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Certified professional drivers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="bg-orange w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-feather="truck" class="text-white h-8 w-8"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 mt-8 md:mt-0">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Moving truck" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row-reverse items-center" data-aos="fade-up">
+                        <div class="md:w-1/2 md:pl-8 mb-8 md:mb-0 text-center md:text-left">
+                            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-heading font-bold text-navy mb-4">4. Delivery & Setup</h3>
+                                <p class="text-gray-700 mb-4">Upon arrival, we carefully unload, unpack, and place items according to your preferences. Our team can also assist with furniture assembly and room arrangement.</p>
+                                <ul class="text-left space-y-2 text-gray-600">
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Careful unloading and placement</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Furniture assembly service</li>
+                                    <li class="flex items-center"><i data-feather="check-circle" class="text-orange h-4 w-4 mr-2"></i>Packaging debris removal</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="bg-orange w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-feather="home" class="text-white h-8 w-8"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pr-8 mt-8 md:mt-0">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Delivery and setup" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-heading font-bold text-navy mb-4">Specialized Moving Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Expert handling for your most precious and challenging items</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Piano Moving -->
+                <div class="bg-soft-gray p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Piano moving" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="music" class="text-orange h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Piano & Musical Instruments</h3>
+                    <p class="text-gray-600 mb-4">Specialized equipment and techniques for grand pianos, uprights, and delicate musical instruments. Our team includes certified piano movers.</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• Custom padding and protection</li>
+                        <li>• Professional piano boards and dollies</li>
+                        <li>• Climate-controlled transportation</li>
+                        <li>• Tuning service recommendations</li>
+                    </ul>
+                </div>
+                
+                <!-- Artwork & Antiques -->
+                <div class="bg-soft-gray p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Artwork handling" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="image" class="text-orange h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Fine Art & Antiques</h3>
+                    <p class="text-gray-600 mb-4">Museum-quality packing and handling for paintings, sculptures, antique furniture, and collectibles with comprehensive insurance coverage.</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• Custom crating and protective wrapping</li>
+                        <li>• Temperature and humidity monitoring</li>
+                        <li>• White-glove handling service</li>
+                        <li>• Fine art insurance available</li>
+                    </ul>
+                </div>
+                
+                <!-- Electronics & IT -->
+                <div class="bg-soft-gray p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Electronics packing" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="monitor" class="text-orange h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Electronics & IT Equipment</h3>
+                    <p class="text-gray-600 mb-4">Safe relocation of computers, servers, home theater systems, and sensitive electronic equipment with proper disconnection and setup services.</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• Professional disconnection/reconnection</li>
+                        <li>• Anti-static packaging materials</li>
+                        <li>• Data backup recommendations</li>
+                        <li>• IT setup assistance available</li>
+                    </ul>
+                </div>
+                
+                <!-- Plants & Garden -->
+                <div class="bg-soft-gray p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Plant moving" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="leaf" class="text-orange h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Plants & Garden Items</h3>
+                    <p class="text-gray-600 mb-4">Careful transportation of indoor plants, outdoor garden furniture, and landscaping elements with proper preparation and climate control.</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• Pre-move plant health assessment</li>
+                        <li>• Proper watering and preparation</li>
+                        <li>• Temperature-controlled transport</li>
+                        <li>• Garden setup consultation</li>
+                    </ul>
+                </div>
+                
+                <!-- Gym Equipment -->
+                <div class="bg-soft-gray p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Gym equipment" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="activity" class="text-orange h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Gym & Exercise Equipment</h3>
+                    <p class="text-gray-600 mb-4">Professional handling of treadmills, weight machines, and home gym setups including disassembly, transportation, and reassembly services.</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• Safe disassembly and reassembly</li>
+                        <li>• Heavy lifting equipment</li>
+                        <li>• Floor protection measures</li>
+                        <li>• Calibration and testing service</li>
+                    </ul>
+                </div>
+                
+                <!-- Wine Collection -->
+                <div class="bg-soft-gray p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Wine storage" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <div class="bg-orange/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="glass" class="text-orange h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-4">Wine Collections & Cellars</h3>
+                    <p class="text-gray-600 mb-4">Temperature-controlled transportation for wine collections, with specialized packaging to prevent damage and maintain optimal storage conditions.</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• Climate-controlled transportation</li>
+                        <li>• Individual bottle protection</li>
+                        <li>• Proper positioning during transport</li>
+                        <li>• Wine cellar setup assistance</li>
+                    </ul>
