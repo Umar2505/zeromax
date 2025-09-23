@@ -14,177 +14,433 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i data-feather="truck" class="h-8 w-8 text-blue-600"></i>
-                        <span class="ml-2 text-xl font-bold text-gray-800">Kind Movers</span>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
-                        <a href="/about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About Us</a>
-                        <a href="#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
-                        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Reviews</a>
-                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-                        <div id="google_translate_element" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"></div>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
-                        <i data-feather="menu" class="h-6 w-6"></i>
-                    </button>
-                </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+            <i data-feather="truck" class="h-8 w-8 text-blue-600"></i>
+            <span class="ml-2 text-xl font-bold text-gray-800">Kind Movers</span>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#services" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Services</a>
-                <a href="/about" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">About Us</a>
-                <a href="#pricing" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Pricing</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Reviews</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Contact</a>
-                <div id="google_translate_element" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium"></div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8 relative text-base"> <!-- text-base here -->
+            <a href="/" class="text-blue-700 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+
+            <!-- Dropdown -->
+            <div class="group relative">
+            <button
+                class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium flex items-center">
+                Moving Services
+                <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+            </button>
+            <!-- smoother dropdown -->
+            <div
+                class="absolute top-8 left-0 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-200 ease-in-out bg-white shadow-lg rounded-md mt-2 w-64 z-50">
+                <a href="#home-relocation" class="block px-4 py-2 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home Relocation</a>
+                <a href="#office-relocation" class="block px-4 py-2 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600">Office Relocation</a>
+                <a href="#furniture-installation" class="block px-4 py-2 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600">Furniture Installation</a>
+                <a href="#cleaning" class="block px-4 py-2 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600">Cleaning</a>
+                <a href="#packing" class="block px-4 py-2 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600">Packing / Materials</a>
+                <a href="#special-movings" class="block px-4 py-2 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600">Special Movings</a>
+            </div>
+            </div>
+
+            <a href="/about" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">About Us</a>
+            <a href="#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Pricing</a>
+            <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Contact Us</a>
+        </div>
+        </div>
+        <div id="google_translate_element" class="px-3 py-2 text-sm font-medium"></div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+            aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+            <i data-feather="menu" class="h-6 w-6"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="/" class="block px-3 py-2 text-base font-medium text-blue-700 hover:text-blue-600">Home</a>
+        
+        <!-- Collapsible Mobile Dropdown -->
+        <div class="space-y-1">
+            <button
+            class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 focus:outline-none"
+            onclick="document.getElementById('mobile-services').classList.toggle('hidden')">
+            Moving Services
+            <i data-feather="chevron-down" class="h-4 w-4"></i>
+            </button>
+            <div id="mobile-services" class="hidden pl-4 space-y-1">
+            <a href="#home-relocation" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home Relocation</a>
+            <a href="#office-relocation" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Office Relocation</a>
+            <a href="#furniture-installation" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Furniture Installation</a>
+            <a href="#cleaning" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Cleaning</a>
+            <a href="#packing" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Packing / Materials</a>
+            <a href="#special-movings" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Special Movings</a>
             </div>
         </div>
+
+        <a href="/about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">About Us</a>
+        <a href="#pricing" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">Pricing</a>
+        <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">Contact Us</a>
+        
+        </div>
+    </div>
     </nav>
 
+
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-32 md:pt-32 md:pb-48 bg-cover bg-center" style="background-image: url('https://static.photos/cityscape/1200x630/42');">
-        <div class="hero-gradient absolute inset-0"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="md:w-2/3 lg:w-1/2" data-aos="fade-right">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Reliable Local & Long-Distance Moving in the UAE</h1>
-                <p class="text-xl text-gray-700 mb-8">Professional moving services with Swedish expertise, now serving cities across the UAE.</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Get Your Quote</a>
-                    <a href="#about" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-8 rounded-lg border border-gray-300 transition duration-300 transform hover:scale-105">Learn More</a>
-                </div>
-                <div class="mt-10 flex flex-wrap gap-4">
-                    <div class="flex items-center bg-white bg-opacity-80 px-4 py-2 rounded-lg">
-                        <i data-feather="shield" class="text-blue-600 mr-2"></i>
-                        <span class="text-sm font-medium">Fully Insured</span>
-                    </div>
-                    <div class="flex items-center bg-white bg-opacity-80 px-4 py-2 rounded-lg">
-                        <i data-feather="award" class="text-blue-600 mr-2"></i>
-                        <span class="text-sm font-medium">10+ Years Experience</span>
-                    </div>
-                    <div class="flex items-center bg-white bg-opacity-80 px-4 py-2 rounded-lg">
-                        <i data-feather="check-circle" class="text-blue-600 mr-2"></i>
-                        <span class="text-sm font-medium">Licensed in UAE</span>
-                    </div>
-                </div>
-            </div>
+    <section class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-40 flex flex-col lg:flex-row items-center gap-12">
+    
+    <!-- Left Content -->
+    <div class="flex-1 text-center lg:text-left" data-aos="fade-up">
+      <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+        Moving Made <span class="text-blue-600">Simple</span> <br class="hidden lg:block"> Across the UAE
+      </h1>
+      <p class="text-lg lg:text-xl text-gray-700 mb-8 max-w-xl mx-auto lg:mx-0">
+        Whether it’s a new apartment, office, or an entire villa — Kind Movers delivers safe, stress-free, and affordable relocation with a personal touch.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+        <a href="#quote" 
+           class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition transform hover:scale-105">
+          Get Free Quote
+        </a>
+        <a href="#services" 
+           class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-8 rounded-lg border border-gray-300 shadow transition">
+          Our Services
+        </a>
+      </div>
+
+      <!-- Quick Highlights -->
+      <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <div class="flex flex-col items-center lg:items-start">
+          <i data-feather="clock" class="text-blue-600 h-8 w-8 mb-2"></i>
+          <span class="font-medium text-gray-800">On-Time Delivery</span>
         </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
-            <a href="#services" class="text-gray-700 hover:text-blue-600">
-                <i data-feather="chevron-down" class="h-8 w-8 animate-bounce"></i>
-            </a>
+        <div class="flex flex-col items-center lg:items-start">
+          <i data-feather="users" class="text-blue-600 h-8 w-8 mb-2"></i>
+          <span class="font-medium text-gray-800">Expert Team</span>
         </div>
-    </section>
+        <div class="flex flex-col items-center lg:items-start">
+          <i data-feather="map-pin" class="text-blue-600 h-8 w-8 mb-2"></i>
+          <span class="font-medium text-gray-800">Across All UAE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Image / Illustration -->
+    <div class="flex-1 relative" data-aos="fade-left">
+    <div class="relative w-full max-w-3xl mx-auto lg:mx-0">
+    <img src="./images/moving-hero.jpg" 
+       alt="Moving boxes" 
+       class="rounded-2xl shadow-xl border border-gray-200 w-full h-auto">
+        <!-- Decorative Shape -->
+        <div class="absolute -bottom-8 -left-8 w-40 h-40 bg-blue-300 rounded-full -z-10"></div>
+        <div class="absolute -top-8 -right-8 w-40 h-40 bg-blue-200 rounded-full -z-10"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+    <a href="#why-choose-us" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+      <span class="text-xs uppercase tracking-wide mb-1">Scroll Down</span>
+      <i data-feather="chevron-down" class="h-8 w-8 animate-bounce"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Full-Width Feature Carousel With Quote Buttons -->
+<section id="why-choose-us" class="relative w-full">
+  <div class="swiper mySwiper h-[80vh] md:h-[85vh] lg:h-[90vh]">
+    <div class="swiper-wrapper h-full">
+
+      <!-- Feature 1 -->
+      <div class="swiper-slide relative w-full h-full bg-cover bg-center flex items-center justify-center" style="background-image: url('./images/photo1.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative z-10 w-full max-w-3xl px-6 py-8 bg-black bg-opacity-40 rounded-xl text-center flex flex-col items-center justify-center text-white">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Professional Movers</h2>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            Our highly experienced movers handle each item with precision and care. From delicate furniture to bulky appliances, every aspect of your relocation is meticulously managed to ensure a stress-free experience.
+          </p>
+          <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="swiper-slide relative w-full h-full bg-cover bg-center flex items-center justify-center" style="background-image: url('./images/photo2.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-10 w-full max-w-3xl px-6 py-8 bg-black bg-opacity-40 rounded-xl text-center flex flex-col items-center justify-center text-white">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Affordable Pricing</h2>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            Transparent pricing with no hidden fees. Packages are customized to your needs, ensuring the best value without compromising quality.
+          </p>
+          <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="swiper-slide relative w-full h-full bg-cover bg-center flex items-center justify-center" style="background-image: url('./images/photo3.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-10 w-full max-w-3xl px-6 py-8 bg-black bg-opacity-40 rounded-xl text-center flex flex-col items-center justify-center text-white">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Fast & Reliable</h2>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            On-time delivery with the utmost care for your belongings. Efficient execution reduces downtime and keeps your schedule on track.
+          </p>
+          <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="swiper-slide relative w-full h-full bg-cover bg-center flex items-center justify-center" style="background-image: url('./images/photo4.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-10 w-full max-w-3xl px-6 py-8 bg-black bg-opacity-40 rounded-xl text-center flex flex-col items-center justify-center text-white">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">24/7 Support</h2>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            Our dedicated support team is available around the clock to assist with any questions or concerns. Every move is smooth and stress-free.
+          </p>
+          <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="swiper-slide relative w-full h-full bg-cover bg-center flex items-center justify-center" style="background-image: url('./images/photo5.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-10 w-full max-w-3xl px-6 py-8 bg-black bg-opacity-40 rounded-xl text-center flex flex-col items-center justify-center text-white">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Fully Insured</h2>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            Your belongings are fully protected throughout the move. Complete insurance coverage gives you peace of mind from start to finish.
+          </p>
+          <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation & Pagination -->
+    <div class="swiper-button-next text-white"></div>
+    <div class="swiper-button-prev text-white"></div>
+    <div class="swiper-pagination mt-6"></div>
+  </div>
+</section>
+
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Moving Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive moving solutions tailored to your needs across the UAE</p>
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Moving Services</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive moving solutions tailored to your needs across the UAE</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Card 1 -->
+            <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                    <i data-feather="home" class="text-blue-600 h-12 w-12"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Home Relocation</h3>
+                    <p class="text-gray-600 mb-4">Stress-free relocation within your home city with our professional team handling every detail.</p>
+                    <a href="#quote" class="bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition">Learn More</a>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.photos/cityscape/640x360/1');"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="home" class="text-blue-600 h-6 w-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900">Local Moves</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Stress-free relocation within your city with our professional team handling every detail.</p>
-                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
-                    </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                    <i data-feather="briefcase" class="text-blue-600 h-12 w-12"></i>
                 </div>
-                <!-- Service Card 2 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.photos/travel/640x360/2');"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="map" class="text-blue-600 h-6 w-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900">Long-Distance Moves</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Seamless relocation between UAE cities with our specialized long-distance moving services.</p>
-                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
-                    </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Office Relocation</h3>
+                    <p class="text-gray-600 mb-4">Efficient commercial moves with minimal downtime for your business operations.</p>
+                    <a href="#quote" class="bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition">Learn More</a>
                 </div>
-                <!-- Service Card 3 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.photos/office/640x360/3');"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="box" class="text-blue-600 h-6 w-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900">Packing Services</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Professional packing using high-quality materials to ensure your belongings arrive safely.</p>
-                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
-                    </div>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                    <i data-feather="box" class="text-blue-600 h-12 w-12"></i>
                 </div>
-                <!-- Service Card 4 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.photos/workspace/640x360/4');"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="briefcase" class="text-blue-600 h-6 w-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900">Office Moves</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Minimize business downtime with our efficient commercial relocation services.</p>
-                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
-                    </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Furniture Installation</h3>
+                    <p class="text-gray-600 mb-4">Professional assembly and installation of your furniture in your new home or office.</p>
+                    <a href="#quote" class="bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition">Learn More</a>
                 </div>
-                <!-- Service Card 5 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.photos/warehouse/640x360/5');"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="database" class="text-blue-600 h-6 w-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900">Storage Solutions</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Secure, climate-controlled storage facilities for short or long-term needs.</p>
-                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
-                    </div>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                    <i data-feather="droplet" class="text-blue-600 h-12 w-12"></i>
                 </div>
-                <!-- Service Card 6 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.photos/furniture/640x360/6');"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="settings" class="text-blue-600 h-6 w-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900">Specialty Items</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Expert handling of pianos, artwork, antiques, and other valuable items.</p>
-                        <a href="#quote" class="text-blue-600 font-medium inline-flex items-center">Get a quote <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i></a>
-                    </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Cleaning Services</h3>
+                    <p class="text-gray-600 mb-4">Thorough pre- and post-move cleaning to ensure your space is spotless.</p>
+                    <a href="#quote" class="bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Service Card 5 -->
+            <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                    <i data-feather="package" class="text-blue-600 h-12 w-12"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Packing & Packing Materials</h3>
+                    <p class="text-gray-600 mb-4">High-quality packing materials and expert packing services for safe transport.</p>
+                    <a href="#quote" class="bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Service Card 6 -->
+            <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                    <i data-feather="star" class="text-blue-600 h-12 w-12"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Special Moves</h3>
+                    <p class="text-gray-600 mb-4">Expert handling of delicate, heavy, or specialty items like artwork, pianos, and antiques.</p>
+                    <a href="#quote" class="bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition">Learn More</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Moving Process-->
+<section id="moving-process" class="py-24 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <!-- Section Heading -->
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Our Step-by-Step Moving Process</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-16">
+      Every move is handled with care and precision. Our process ensures a smooth, safe, and stress-free relocation.
+    </p>
+
+    <!-- Timeline / Steps -->
+    <div class="relative flex flex-col md:flex-row items-center justify-between md:space-x-6">
+      
+      <!-- Step 1 -->
+      <div class="group relative flex-1 mb-16 md:mb-0">
+        <div class="relative z-10 bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition transform cursor-pointer">
+          <div class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white mx-auto mb-4 text-xl font-bold">1</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Request a Quote</h3>
+          <p class="text-gray-600 text-sm">Share your moving details and get a free, no-obligation estimate instantly.</p>
+        </div>
+        <div class="hidden md:block absolute top-7 right-[-50%] w-full h-1 bg-blue-300 z-0"></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="group relative flex-1 mb-16 md:mb-0">
+        <div class="relative z-10 bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition transform cursor-pointer">
+          <div class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white mx-auto mb-4 text-xl font-bold">2</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Packing & Preparation</h3>
+          <p class="text-gray-600 text-sm">Our team carefully packs your belongings using high-quality materials for maximum protection.</p>
+        </div>
+        <div class="hidden md:block absolute top-7 right-[-50%] w-full h-1 bg-blue-300 z-0"></div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="group relative flex-1 mb-16 md:mb-0">
+        <div class="relative z-10 bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition transform cursor-pointer">
+          <div class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white mx-auto mb-4 text-xl font-bold">3</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Safe Transportation</h3>
+          <p class="text-gray-600 text-sm">We transport your items securely to the new location with full insurance and care.</p>
+        </div>
+        <div class="hidden md:block absolute top-7 right-[-50%] w-full h-1 bg-blue-300 z-0"></div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="group relative flex-1 mb-16 md:mb-0">
+        <div class="relative z-10 bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition transform cursor-pointer">
+          <div class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white mx-auto mb-4 text-xl font-bold">4</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Unpacking & Setup</h3>
+          <p class="text-gray-600 text-sm">We place furniture and boxes exactly where you want, assembling everything as needed.</p>
+        </div>
+        <div class="hidden md:block absolute top-7 right-[-50%] w-full h-1 bg-blue-300 z-0"></div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="group relative flex-1">
+        <div class="relative z-10 bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition transform cursor-pointer">
+          <div class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white mx-auto mb-4 text-xl font-bold">5</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Final Check</h3>
+          <p class="text-gray-600 text-sm">We make sure everything is perfect and that you’re completely satisfied with your move.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mobile Timeline (stacked) -->
+    <div class="md:hidden mt-12 space-y-10">
+      <div class="flex items-start space-x-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">1</div>
+        <div>
+          <h4 class="text-gray-900 font-semibold mb-1">Request a Quote</h4>
+          <p class="text-gray-600 text-sm">Share your moving details and get a free estimate instantly.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">2</div>
+        <div>
+          <h4 class="text-gray-900 font-semibold mb-1">Packing & Preparation</h4>
+          <p class="text-gray-600 text-sm">We carefully pack your belongings using high-quality materials.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">3</div>
+        <div>
+          <h4 class="text-gray-900 font-semibold mb-1">Safe Transportation</h4>
+          <p class="text-gray-600 text-sm">Your items are transported securely and efficiently.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">4</div>
+        <div>
+          <h4 class="text-gray-900 font-semibold mb-1">Unpacking & Setup</h4>
+          <p class="text-gray-600 text-sm">We set everything up in your new home exactly as you want.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">5</div>
+        <div>
+          <h4 class="text-gray-900 font-semibold mb-1">Final Check</h4>
+          <p class="text-gray-600 text-sm">Everything is perfect and you’re fully satisfied.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- About Us Section -->
     <section id="about" class="py-20 bg-gray-50">
@@ -236,7 +492,87 @@
             </div>
         </div>
     </section>
+    
+    <!-- Coverage Section -->
+    <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">We Serve All Major UAE Cities</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Reliable moving services across the Emirates</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Map -->
+            <div data-aos="fade-right">
+                <div id="uaeMap" class="h-96 rounded-xl overflow-hidden"></div>
+            </div>
 
+            <!-- Cities -->
+            <div data-aos="fade-left">
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Dubai -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.2048" data-lng="55.2708">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Dubai</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">All areas including Palm Jumeirah, Downtown, Marina, JBR, and more</p>
+                    </div>
+
+                    <!-- Abu Dhabi -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="24.4539" data-lng="54.3773">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Abu Dhabi</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Covering Yas Island, Reem Island, Khalifa City, and all main districts</p>
+                    </div>
+
+                    <!-- Sharjah -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.3463" data-lng="55.4209">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Sharjah</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Full coverage including Al Khan, Al Nahda, and University City</p>
+                    </div>
+
+                    <!-- Ajman -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.4052" data-lng="55.5136">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Ajman</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Service across all residential and commercial areas</p>
+                    </div>
+
+                    <!-- Ras Al Khaimah -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.8007" data-lng="55.9762">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Ras Al Khaimah</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Moving services throughout the emirate</p>
+                    </div>
+
+                    <!-- Fujairah -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.1288" data-lng="56.3265">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
+                            <h3 class="font-semibold text-gray-900">Fujairah</h3>
+                        </div>
+                        <p class="text-sm text-gray-600">Complete relocation solutions</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                        Check service availability in your area <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Quote Section -->
     <section id="quote" class="py-20 bg-blue-600 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
@@ -347,109 +683,6 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Moving Cost Calculator</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get a detailed estimate for your move</p>
-        </div>
-
-        <div class="bg-gray-50 p-8 rounded-xl shadow-lg" data-aos="fade-up">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Rooms -->
-                <div>
-                    <label for="rooms" class="block text-sm font-medium text-gray-700 mb-2">Number of Rooms *</label>
-                    <select id="rooms" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        <option value="1">Studio / 1 Room</option>
-                        <option value="2">2 Rooms</option>
-                        <option value="3">3 Rooms</option>
-                        <option value="4">4 Rooms</option>
-                        <option value="5">5+ Rooms</option>
-                    </select>
-                </div>
-
-                <!-- Floor Area -->
-                <div>
-                    <label for="area" class="block text-sm font-medium text-gray-700 mb-2">Approx. Floor Area (sq.m.) *</label>
-                    <input type="number" id="area" min="10" max="500" value="50" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                </div>
-
-                <!-- Move Type -->
-                <div>
-                    <label for="moveType" class="block text-sm font-medium text-gray-700 mb-2">Move Type *</label>
-                    <select id="moveType" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        <option value="local">Local Move</option>
-                        <option value="intercity">Intercity</option>
-                        <option value="international">International</option>
-                    </select>
-                </div>
-
-                <!-- Distance -->
-                <div>
-                    <label for="distance" class="block text-sm font-medium text-gray-700 mb-2">Distance (km)</label>
-                    <input type="number" id="distance" min="1" max="1000" value="10" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                </div>
-
-                <!-- Floor Level -->
-                <div>
-                    <label for="floor" class="block text-sm font-medium text-gray-700 mb-2">Floor / Elevator Access *</label>
-                    <select id="floor" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        <option value="ground">Ground / Elevator Available</option>
-                        <option value="1-3">1-3 Floors / Stairs</option>
-                        <option value="4+">4+ Floors / No Elevator</option>
-                    </select>
-                </div>
-
-                <!-- Vehicle Size -->
-                <div>
-                    <label for="vehicle" class="block text-sm font-medium text-gray-700 mb-2">Vehicle Size *</label>
-                    <select id="vehicle" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        <option value="small">Small Truck</option>
-                        <option value="medium">Medium Truck</option>
-                        <option value="large">Large Truck</option>
-                    </select>
-                </div>
-
-                <!-- Extra Services -->
-                <div class="col-span-1 md:col-span-2">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Extra Services</label>
-                    <div class="flex flex-col space-y-2">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="packing">
-                            <span class="ml-2 text-gray-700">Packing Service (+AED 500)</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="storage">
-                            <span class="ml-2 text-gray-700">Storage (+AED 300)</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="fragile">
-                            <span class="ml-2 text-gray-700">Fragile Items Handling (+AED 200)</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" id="insurance">
-                            <span class="ml-2 text-gray-700">Insurance (+AED 400)</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Calculate Button -->
-            <div class="mt-6">
-                <button id="calculateBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md text-center transition duration-300 transform hover:scale-105">
-                    Calculate Estimate
-                </button>
-            </div>
-
-            <!-- Result -->
-            <div id="result" class="mt-6 p-4 rounded-md bg-green-50 text-green-800 font-bold text-lg hidden">
-                Estimated Cost: AED 0
-            </div>
-        </div>
-    </div>
-</section>
-
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -533,210 +766,100 @@
         </div>
     </section>
 
-    <!-- Coverage Section -->
-    <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">We Serve All Major UAE Cities</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Reliable moving services across the Emirates</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <!-- Map -->
-            <div data-aos="fade-right">
-                <div id="uaeMap" class="h-96 rounded-xl overflow-hidden"></div>
-            </div>
-
-            <!-- Cities -->
-            <div data-aos="fade-left">
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- Dubai -->
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.2048" data-lng="55.2708">
-                        <div class="flex items-center mb-2">
-                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
-                            <h3 class="font-semibold text-gray-900">Dubai</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">All areas including Palm Jumeirah, Downtown, Marina, JBR, and more</p>
-                    </div>
-
-                    <!-- Abu Dhabi -->
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="24.4539" data-lng="54.3773">
-                        <div class="flex items-center mb-2">
-                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
-                            <h3 class="font-semibold text-gray-900">Abu Dhabi</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Covering Yas Island, Reem Island, Khalifa City, and all main districts</p>
-                    </div>
-
-                    <!-- Sharjah -->
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.3463" data-lng="55.4209">
-                        <div class="flex items-center mb-2">
-                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
-                            <h3 class="font-semibold text-gray-900">Sharjah</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Full coverage including Al Khan, Al Nahda, and University City</p>
-                    </div>
-
-                    <!-- Ajman -->
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.4052" data-lng="55.5136">
-                        <div class="flex items-center mb-2">
-                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
-                            <h3 class="font-semibold text-gray-900">Ajman</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Service across all residential and commercial areas</p>
-                    </div>
-
-                    <!-- Ras Al Khaimah -->
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.8007" data-lng="55.9762">
-                        <div class="flex items-center mb-2">
-                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
-                            <h3 class="font-semibold text-gray-900">Ras Al Khaimah</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Moving services throughout the emirate</p>
-                    </div>
-
-                    <!-- Fujairah -->
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 city" data-lat="25.1288" data-lng="56.3265">
-                        <div class="flex items-center mb-2">
-                            <i data-feather="map-pin" class="text-blue-600 mr-2"></i>
-                            <h3 class="font-semibold text-gray-900">Fujairah</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Complete relocation solutions</p>
-                    </div>
-                </div>
-
-                <div class="mt-6">
-                    <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
-                        Check service availability in your area <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+   <!-- FAQ Section -->
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+      <p class="text-xl text-gray-600">Answers to common questions about moving in the UAE</p>
     </div>
+    <div class="space-y-4">
+      <!-- FAQ Item -->
+      <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900">How far in advance should I book my move?</h3>
+          <i data-feather="chevron-down" class="text-gray-500 h-5 w-5 transition-transform duration-300"></i>
+        </div>
+        <div class="mt-4 hidden text-gray-600 transition-all duration-300">
+          <p>We recommend booking at least 2-3 weeks in advance, especially during peak moving seasons. Last-minute moves may be possible depending on availability.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900">What items are prohibited from being moved?</h3>
+          <i data-feather="chevron-down" class="text-gray-500 h-5 w-5 transition-transform duration-300"></i>
+        </div>
+        <div class="mt-4 hidden text-gray-600 transition-all duration-300">
+          <p>We cannot transport hazardous materials like flammable liquids, compressed gases, firearms, ammunition, perishable food items, plants, and pets. Valuables like jewelry and documents should be carried personally.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900">Do you provide packing materials?</h3>
+          <i data-feather="chevron-down" class="text-gray-500 h-5 w-5 transition-transform duration-300"></i>
+        </div>
+        <div class="mt-4 hidden text-gray-600 transition-all duration-300">
+          <p>Yes, we offer boxes, bubble wrap, packing paper, mattress covers, and furniture pads. Premium packages include all necessary packing materials.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900">How are fragile items handled?</h3>
+          <i data-feather="chevron-down" class="text-gray-500 h-5 w-5 transition-transform duration-300"></i>
+        </div>
+        <div class="mt-4 hidden text-gray-600 transition-all duration-300">
+          <p>Fragile items receive extra padding, custom crating if needed, and special labeling. Premium services are available for high-value or delicate items.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900">What happens if something gets damaged during the move?</h3>
+          <i data-feather="chevron-down" class="text-gray-500 h-5 w-5 transition-transform duration-300"></i>
+        </div>
+        <div class="mt-4 hidden text-gray-600 transition-all duration-300">
+          <p>We have comprehensive insurance coverage. Any damage is documented immediately and claims are guided by our team. Standard coverage is included; upgrades are available.</p>
+        </div>
+      </div>
+
+      <!-- Additional FAQ Items -->
+      <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="600">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900">Can you move large office equipment?</h3>
+          <i data-feather="chevron-down" class="text-gray-500 h-5 w-5 transition-transform duration-300"></i>
+        </div>
+        <div class="mt-4 hidden text-gray-600 transition-all duration-300">
+          <p>Yes, we have the expertise and equipment to move office furniture, servers, copiers, and other heavy machinery safely and efficiently.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="700">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900">Do you offer international moving services?</h3>
+          <i data-feather="chevron-down" class="text-gray-500 h-5 w-5 transition-transform duration-300"></i>
+        </div>
+        <div class="mt-4 hidden text-gray-600 transition-all duration-300">
+          <p>Currently, we focus on local and inter-city moves within the UAE. International moves may be considered case-by-case. Contact us for details.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+        Have more questions? Contact us <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+      </a>
+    </div>
+  </div>
 </section>
 
-    <!-- Process Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Moving Process</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Simple, transparent steps for a stress-free move</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
-                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
-                            <i data-feather="clipboard" class="text-blue-600 h-8 w-8"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">1. Get a Quote</h3>
-                    <p class="text-gray-600">Fill out our simple form or call for a free estimate</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
-                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
-                            <i data-feather="calendar" class="text-blue-600 h-8 w-8"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">2. Schedule</h3>
-                    <p class="text-gray-600">Choose your moving date and confirm details</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
-                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
-                            <i data-feather="package" class="text-blue-600 h-8 w-8"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">3. Packing Day</h3>
-                    <p class="text-gray-600">Our team handles everything with care and precision</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-md mx-auto mb-6">
-                        <div class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center">
-                            <i data-feather="home" class="text-blue-600 h-8 w-8"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">4. Delivery</h3>
-                    <p class="text-gray-600">We deliver and set up your belongings in your new space</p>
-                </div>
-            </div>
-            <div class="mt-12 text-center">
-                <a href="#quote" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
-                    Start Your Move Today <i data-feather="arrow-right" class="ml-2 h-5 w-5"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600">Answers to common questions about moving in the UAE</p>
-            </div>
-            <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-gray-900">How far in advance should I book my move?</h3>
-                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
-                    </div>
-                    <div class="mt-4 hidden text-gray-600">
-                        <p>We recommend booking at least 2-3 weeks in advance, especially during peak moving seasons (summer months and beginning/end of school terms). However, we can often accommodate last-minute moves depending on availability.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 2 -->
-                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-gray-900">What items are prohibited from being moved?</h3>
-                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
-                    </div>
-                    <div class="mt-4 hidden text-gray-600">
-                        <p>For safety and legal reasons, we cannot transport hazardous materials including flammable liquids, compressed gases, firearms, ammunition, perishable food items, plants, and pets. We also recommend you carry valuable personal items like jewelry and important documents yourself.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 3 -->
-                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-gray-900">Do you provide packing materials?</h3>
-                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
-                    </div>
-                    <div class="mt-4 hidden text-gray-600">
-                        <p>Yes, we offer high-quality packing materials including boxes in various sizes, bubble wrap, packing paper, mattress covers, and furniture pads. These can be included in your package or purchased separately. Our premium and deluxe packages include packing materials.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 4 -->
-                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-gray-900">How are fragile items handled?</h3>
-                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
-                    </div>
-                    <div class="mt-4 hidden text-gray-600">
-                        <p>Our team is trained in special techniques for packing and transporting fragile items. We use extra padding, custom crating when needed, and clearly mark fragile boxes. Glass, artwork, and electronics are given special attention. You can also request our premium packing service for valuable items.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 5 -->
-                <div class="faq-item bg-gray-50 rounded-lg p-6 cursor-pointer" data-aos="fade-up" data-aos-delay="500">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-gray-900">What happens if something gets damaged during the move?</h3>
-                        <i data-feather="chevron-down" class="text-gray-500 h-5 w-5"></i>
-                    </div>
-                    <div class="mt-4 hidden text-gray-600">
-                        <p>While we take every precaution to prevent damage, in the rare case that something occurs, we have comprehensive insurance coverage. Our team will document any damage immediately and guide you through the claims process. Our standard liability coverage is included, with options to upgrade for additional protection.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 text-center">
-                <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
-                    Have more questions? Contact us <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-900 text-white">
@@ -1000,24 +1123,6 @@ contactForm.addEventListener("submit", async e => {
             menu.classList.toggle('hidden');
         });
 
-        // FAQ accordion functionality
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const answer = this.querySelector('div.hidden');
-                const icon = this.querySelector('i');
-                
-                if (answer.classList.contains('hidden')) {
-                    answer.classList.remove('hidden');
-                    icon.setAttribute('data-feather', 'chevron-up');
-                } else {
-                    answer.classList.add('hidden');
-                    icon.setAttribute('data-feather', 'chevron-down');
-                }
-                feather.replace();
-            });
-        });
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1042,6 +1147,8 @@ contactForm.addEventListener("submit", async e => {
             });
         });
     </script>
+
+<!-- Map -->
     <script>
     document.addEventListener("DOMContentLoaded", () => {
         // Initialize Leaflet map
@@ -1124,11 +1231,74 @@ contactForm.addEventListener("submit", async e => {
         });
     });
     </script>
-    <script type="text/javascript">
+    <script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
     </script>
+
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Swiper JS & Initialization -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+  loop: true,
+  autoplay: { 
+    delay: 5000, 
+    disableOnInteraction: false 
+  },
+  effect: "slide", // changed from "fade" to "slide"
+  speed: 1000,
+  slidesPerView: 1,
+  spaceBetween: 0, // you can increase e.g., 20 for a gap
+  pagination: { 
+    el: ".swiper-pagination", 
+    clickable: true 
+  },
+  navigation: { 
+    nextEl: ".swiper-button-next", 
+    prevEl: ".swiper-button-prev" 
+  },
+});
+
+  feather.replace();
+</script>
+
+<!-- FAQ Toggle Script -->
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const header = item.querySelector('h3');
+    const icon = item.querySelector('i');
+    const content = item.querySelector('div.mt-4');
+
+    // Remove hidden initially
+    content.classList.remove('hidden');
+    content.style.maxHeight = '0px';
+
+    header.addEventListener('click', () => {
+      const isOpen = content.classList.contains('open');
+
+      // Close all FAQ items
+      faqItems.forEach(f => {
+        f.querySelector('div.mt-4').classList.remove('open');
+        f.querySelector('i').classList.remove('rotate');
+        f.querySelector('div.mt-4').style.maxHeight = '0px';
+      });
+
+      // Toggle clicked FAQ
+      if (!isOpen) {
+        content.classList.add('open');
+        icon.classList.add('rotate');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Initialize feather icons
+  feather.replace();
+</script>
+
 </body>
 </html>
