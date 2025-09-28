@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Umar2505/zeromax#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "nodemailer": "^6.9.7"
   }
 }

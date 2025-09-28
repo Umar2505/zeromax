@@ -149,45 +149,7 @@
         .interactive-card:hover::before {
             left: 100%;
         }
-
-        #google_translate_element {
-            display: inline-block;
-            padding: 4px 6px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f8f8f8;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-        }
-
-        /* Remove ugly Google text */
-        .goog-logo-link, .goog-te-gadget span {
-            display: none !important;
-        }
-
-        /* Style the dropdown */
-        .goog-te-combo {
-            padding: 4px 6px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 12px;
-            background-color: #fff;
-            cursor: pointer;
-        }
-
-        /* Optional hover effect */
-        .goog-te-combo:hover {
-            border-color: #666;
-        }
-
     </style>
-    <script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-    </script>
-
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body class="bg-gray-50 overflow-x-hidden">
     <!-- Navigation -->
@@ -242,7 +204,7 @@
                         <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-1/2 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">Contact Us</a>
                     </div>
                 </div>
-                <div id="google_translate_element" class="px-3 py-2 text-sm font-medium"></div>
+
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none transition-colors duration-300" id="mobile-menu-button">
