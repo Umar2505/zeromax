@@ -1081,7 +1081,7 @@
 
 
     <script>
-        const movingForm = document.getElementById("movingForm");
+const movingForm = document.getElementById("movingForm");
 const contactForm = document.getElementById("contactForm");
 const messageBox = document.getElementById("formMessage");
 
@@ -1113,7 +1113,11 @@ if (movingForm) {
     formData.forEach((v,k) => data[k] = v);
     
     try {
-      const res = await fetch("/.netlify/functions/send-quote", {
+      // Detect if we're running locally or on Netlify
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const functionUrl = isLocal ? 'http://localhost:8888/.netlify/functions/send-quote' : '/.netlify/functions/send-quote';
+      
+      const res = await fetch(functionUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -1152,7 +1156,11 @@ if (contactForm) {
     formData.forEach((v,k) => data[k] = v);
     
     try {
-      const res = await fetch("/.netlify/functions/send-contact", {
+      // Detect if we're running locally or on Netlify
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const functionUrl = isLocal ? 'http://localhost:8888/.netlify/functions/send-contact' : '/.netlify/functions/send-contact';
+      
+      const res = await fetch(functionUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
