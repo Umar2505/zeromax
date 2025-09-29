@@ -40,6 +40,14 @@ app.get('/special-movings', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'special-movings.html'));
 });
 
+app.get('/pricing', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'pricing.html'));
+});
+
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
