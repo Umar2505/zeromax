@@ -17,7 +17,7 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/home-relocation', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'house.html'));
+  res.sendFile(path.join(__dirname, 'public', 'home-relocation.html'));
 });
 
 app.listen(port, () => {
