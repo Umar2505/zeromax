@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -318,7 +319,7 @@
     </div>
 
     <!-- Hero Section with Parallax -->
-    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 parallax-bg overflow-hidden" style="background-image: linear-gradient(rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1)), url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1920');">
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 parallax-bg overflow-hidden" style="background-image: linear-gradient(rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1)), url('./images/about_main1.jpg');">
         <div class="hero-gradient absolute inset-0"></div>
         
         <!-- Floating Elements -->
@@ -356,81 +357,111 @@
 
     <!-- Story Section with Enhanced Timeline -->
     <section class="py-20 bg-white relative">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center mb-20">
-                <div class="reveal">
-                    <span class="text-blue-600 font-semibold text-lg mb-4 block">Our Journey</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">From Stockholm to the Emirates</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Learn about our journey, our values, and the team that makes us the UAE's most trusted moving partner</p>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-50"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-20">
+        <div class="reveal">
+            <span class="text-blue-600 font-semibold text-lg mb-4 block">Our Journey</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            From Stockholm to the Emirates
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Learn about our journey, our values, and the team that makes us the UAE's most trusted moving partner
+            </p>
+        </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <!-- Timeline Content -->
+        <div class="relative pl-8">
+            <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-purple-600"></div>
+
+            <div class="mb-12 reveal">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift interactive-card">
+                <div class="flex items-center mb-4">
+                <div class="bg-blue-100 rounded-full p-3 mr-4">
+                    <i data-feather="flag" class="h-6 w-6 text-blue-600"></i>
                 </div>
+                <h3 class="text-2xl font-bold text-gray-900">The Beginning</h3>
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                Kind Movers was born from a simple idea: to make moving a seamless and positive experience. Founded in Stockholm, Sweden, as ZeroMax Movers in 2010, we built our reputation on the Scandinavian principles of efficiency, precision, and customer care.
+                </p>
             </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                <!-- Timeline Content -->
-                <div class="relative pl-8">
-                    <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-purple-600"></div>
-                    
-                    <div class="mb-12 reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift interactive-card">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-blue-100 rounded-full p-3 mr-4">
-                                    <i data-feather="flag" class="h-6 w-6 text-blue-600"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-gray-900">The Beginning</h3>
-                            </div>
-                            <p class="text-gray-600 leading-relaxed">Kind Movers was born from a simple idea: to make moving a seamless and positive experience. Founded in Stockholm, Sweden, in 2010, we built our reputation on the Scandinavian principles of efficiency, precision, and customer care.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-12 reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift interactive-card">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-purple-100 rounded-full p-3 mr-4">
-                                    <i data-feather="trending-up" class="h-6 w-6 text-purple-600"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-gray-900">Our Growth</h3>
-                            </div>
-                            <p class="text-gray-600 leading-relaxed">After a decade of success in Sweden, we expanded to the UAE, blending our Swedish expertise with deep local knowledge. This fusion allows us to offer world-class service perfectly adapted to clients in Dubai, Abu Dhabi, and beyond.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift interactive-card">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-green-100 rounded-full p-3 mr-4">
-                                    <i data-feather="star" class="h-6 w-6 text-green-600"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-gray-900">Today & Future</h3>
-                            </div>
-                            <p class="text-gray-600 leading-relaxed">Today, we're the UAE's most trusted moving partner, having completed over 5,000 moves. We continue to innovate, adding new services and expanding our reach while maintaining our core values of trust and excellence.</p>
-                        </div>
-                    </div>
+            </div>
+
+            <div class="mb-12 reveal">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift interactive-card">
+                <div class="flex items-center mb-4">
+                <div class="bg-purple-100 rounded-full p-3 mr-4">
+                    <i data-feather="trending-up" class="h-6 w-6 text-purple-600"></i>
                 </div>
-                
-                <!-- Interactive Image Gallery -->
-                <div class="reveal">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <div class="aspect-w-4 aspect-h-3">
-                            <img id="story-image" class="w-full h-96 object-cover transition-all duration-500" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Dubai skyline">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <h3 class="text-2xl font-bold text-gray-900">Our Growth</h3>
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                After a decade of success in Sweden, we expanded to the UAE, blending our Swedish expertise with deep local knowledge. This fusion allows us to offer world-class service perfectly adapted to clients in Dubai, Abu Dhabi, and beyond.
+                </p>
+            </div>
+            </div>
+
+            <div class="reveal">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift interactive-card">
+                <div class="flex items-center mb-4">
+                <div class="bg-green-100 rounded-full p-3 mr-4">
+                    <i data-feather="star" class="h-6 w-6 text-green-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900">Today & Future</h3>
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                Today, we're the UAE's most trusted moving partner, having completed over 5,000 moves. We continue to innovate, adding new services and expanding our reach while maintaining our core values of trust and excellence.
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Interactive Image Carousel -->
+        <div class="reveal">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-lg mx-auto lg:mx-0">
+                <!-- Big phone-like container -->
+                <div class="relative w-full h-[900px] rounded-2xl overflow-hidden">
+                <img
+                    id="story-image"
+                    class="w-full h-full object-cover transition-all duration-500"
+                    src="./images/carousel2.jpg"
+                    alt="Dubai skyline"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+
+                <!-- Caption + Navigation -->
+                <div class="absolute bottom-6 left-6 right-6">
+                <div class="flex space-x-2 justify-center mb-4">
+                    <button
+                    class="story-nav-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
+                    data-image="./images/carousel2.jpg"
+                    data-caption="Our UAE Journey"
+                    ></button>
+                    <button
+                    class="story-nav-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
+                    data-image="./images/carousel0.jpg"
+                    data-caption="Stockholm Origins"
+                    ></button>
+                    <button
+                    class="story-nav-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
+                    data-image="./images/carousel1.jpg"
+                    data-caption="Professional Service"
+                    ></button>
                         </div>
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <div class="flex space-x-2 justify-center mb-4">
-                                <button class="story-nav-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300" data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" data-caption="Our UAE Journey"></button>
-                                <button class="story-nav-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300" data-image="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800" data-caption="Stockholm Origins"></button>
-                                <button class="story-nav-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300" data-image="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800" data-caption="Professional Service"></button>
-                            </div>
-                            <p id="story-caption" class="text-white text-center font-semibold">Our UAE Journey</p>
+                            <p id="story-caption" class="text-white text-center font-semibold">
+                                Our UAE Journey
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Values Section with Interactive Cards -->
     <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
@@ -602,7 +633,7 @@
                     
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div class="text-center p-6 bg-green-50 rounded-xl">
-                            <i data-feather="leaf" class="h-8 w-8 text-green-600 mx-auto mb-3"></i>
+                            <i data-feather="package" class="h-8 w-8 text-green-600 mx-auto mb-3"></i>
                             <h4 class="font-bold text-gray-900">Eco-Friendly</h4>
                             <p class="text-sm text-gray-600">Sustainable materials</p>
                         </div>
@@ -1210,6 +1241,8 @@ if (movingForm) {
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
+
+        feather.replace();
     </script>
     </body>
     </html>
