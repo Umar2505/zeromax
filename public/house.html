@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>House Relocation Services | Kind Movers UAE</title>
+ <link rel="icon" type="image/png" href="static/logo.png"/>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="./style.css">
+ <style>
+   * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+  .hero-gradient { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1)); }
+  .hover-lift { transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
+  .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+  .reveal { opacity:0; transform:translateY(30px); transition:all .8s ease; }
+  .reveal.active { opacity:1; transform:translateY(0); }
+  .nav-blur { backdrop-filter: blur(20px); background: rgba(255,255,255,0.95); }
+  footer { margin-top: 3rem; }
+ </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+
+<!-- Navigation -->
+    <nav class="nav-blur shadow-lg fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center group">
+                        <i data-feather="truck" class="h-8 w-8 text-blue-600 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">Kind Movers</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 relative text-base">
+                        <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-1/2 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">Home</a>
+
+                        <!-- Enhanced Dropdown -->
+                        <div class="group relative">
+                            <button class="text-blue-600 px-3 py-2 font-medium flex items-center transition-colors duration-300">
+                                Moving Services
+                                <i data-feather="chevron-down" class="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-300"></i>
+                            </button>
+                            <div class="absolute top-full left-0 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 bg-white shadow-xl rounded-xl mt-2 w-72 z-50 border border-gray-100">
+                                <div class="p-2">
+                                    <a href="/home-relocation" class="block px-4 py-3 text-base bg-blue-50 text-blue-600 rounded-lg transition-colors duration-200">
+                                        <i data-feather="home" class="inline h-4 w-4 mr-2"></i>Home Relocation
+                                    </a>
+                                    <a href="/office-relocation" class="block px-4 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">
+                                        <i data-feather="briefcase" class="inline h-4 w-4 mr-2"></i>Office Relocation
+                                    </a>
+                                    <a href="/furniture-installation" class="block px-4 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">
+                                        <i data-feather="tool" class="inline h-4 w-4 mr-2"></i>Furniture Installation
+                                    </a>
+                                    <a href="/cleaning" class="block px-4 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">
+                                        <i data-feather="droplet" class="inline h-4 w-4 mr-2"></i>Cleaning
+                                    </a>
+                                    <a href="/packing" class="block px-4 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">
+                                        <i data-feather="package" class="inline h-4 w-4 mr-2"></i>Packing / Materials
+                                    </a>
+                                    <a href="/special-movings" class="block px-4 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">
+                                        <i data-feather="star" class="inline h-4 w-4 mr-2"></i>Special Movings
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="/about" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-1/2 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">About Us</a>
+                        <a href="/pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-1/2 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">Pricing</a>
+                        <a href="/contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-1/2 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">Contact Us</a>
+                    </div>
+                </div>
+                <div id="google_translate_element" class="px-3 py-2 text-sm font-medium"></div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none transition-colors duration-300" id="mobile-menu-button">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Mobile Menu -->
+        <div class="fixed inset-0 z-40 hidden" id="mobile-menu">
+            <div class="mobile-menu-overlay absolute inset-0" id="mobile-menu-overlay"></div>
+            <div class="relative bg-white shadow-xl h-full w-80 ml-auto transform translate-x-full transition-transform duration-300" id="mobile-menu-content">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center">
+                            <i data-feather="truck" class="h-8 w-8 text-blue-600"></i>
+                            <span class="ml-2 text-xl font-bold text-gray-800">Kind Movers</span>
+                        </div>
+                        <button id="mobile-menu-close" class="text-gray-500 hover:text-gray-700">
+                            <i data-feather="x" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                    <nav class="space-y-1">
+                        <a href="/" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">Home</a>
+                        <div class="space-y-1">
+                            <button class="w-full flex items-center justify-between px-3 py-3 text-base font-medium bg-blue-50 text-blue-600 rounded-lg transition-colors duration-200" onclick="toggleMobileSubmenu()">
+                                Moving Services
+                                <i data-feather="chevron-down" class="h-4 w-4 transition-transform duration-300" id="mobile-services-arrow"></i>
+                            </button>
+                            <div id="mobile-services" class="hidden pl-4 space-y-1">
+                                <a href="/home-relocation" class="block px-3 py-2 text-blue-600 transition-colors duration-200">Home Relocation</a>
+                                <a href="/office-relocation" class="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">Office Relocation</a>
+                                <a href="/furniture-installation" class="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">Furniture Installation</a>
+                                <a href="/cleaning" class="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">Cleaning</a>
+                                <a href="/packing" class="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">Packing / Materials</a>
+                                <a href="/special-movings" class="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">Special Movings</a>
+                            </div>
+                        </div>
+                        <a href="/about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">About Us</a>
+                        <a href="/pricing" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">Pricing</a>
+                        <a href="/contact" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-cover bg-center">
+  <div class="hero-gradient absolute inset-0"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+   <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Professional <span class="text-blue-600">House Relocation</span> in the UAE</h1>
+   <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">From packing to delivery, we handle every detail so your family can settle into your new home with ease.</p>
+  </div>
+ </section>
+
+  <section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+   <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Why Choose Our House Relocation Services?</h2>
+   <div class="md:grid md:grid-cols-12 md:gap-12 items-center">
+    <div class="md:col-span-6 reveal">
+     <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      Moving homes is often described as one of life’s most stressful events, and at Kind Movers, we have dedicated ourselves to eliminating that stress for families across the UAE. Our philosophy centers on genuine care and professionalism, which is why we’re known for our Kind approach to moving.
+     </p>
+     <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      Our house relocation services are designed with your comfort and security in mind. From the very first consultation, we take time to understand your unique needs, whether you are moving within the same neighborhood or across Emirates. We provide personalized planning that covers packing, labeling, safe transport, and even furniture reassembly at your new home.
+     </p>
+     <p class="text-lg text-gray-700 leading-relaxed">
+      Each relocation is managed by a dedicated Project Coordinator who serves as your single point of contact, ensuring clear communication and complete transparency throughout the process. Furthermore, for absolute peace of mind, all moves are covered by a comprehensive insurance policy, protecting every belonging from delicate glassware to large furniture. By combining years of international expertise with deep local knowledge, we offer a service that is reliable, efficient, and tailored precisely to your family’s schedule.
+     </p>
+    </div>
+    <div class="md:col-span-6 mt-8 md:mt-0 reveal">
+     <img src="./images/house_rel1.jpg" alt="A moving coordinator reviewing a checklist with a customer" class="rounded-xl shadow-2xl w-full h-auto object-cover hover-lift"/>
+    </div>
+   </div>
+  </div>
+ </section>
+
+  <section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+   <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Comprehensive Packing & Handling</h2>
+   <div class="md:grid md:grid-cols-12 md:gap-12 items-center">
+    <div class="md:col-span-6 mb-8 md:mb-0 reveal">
+     <img src="./images/carousel2.jpg" alt="Movers wrapping a fragile item with bubble wrap" class="rounded-xl shadow-2xl w-full h-auto object-cover hover-lift"/>
+    </div>
+    <div class="md:col-span-6 reveal">
+     <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      Packing is often the most time-consuming and critical part of any move. Our team uses only the highest quality, eco-friendly packing materials, including reinforced double-walled cartons, custom-built wooden crates for high-value art, and protective blankets for heirloom furniture.
+     </p>
+     <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      We implement a systematic process: each box is meticulously labelled, categorized by room (Kitchen, Master Bedroom, etc.), and recorded on a digital inventory list. This ensures effortless unpacking at your new residence and guarantees nothing is misplaced.
+     </p>
+     <p class="text-lg text-gray-700 leading-relaxed">
+      Our movers are specifically trained in handling sensitive items: flat-screen TVs, delicate glassware, chandeliers, and high-end kitchen appliances. For families with children, we ensure a separate 'Essentials Box' is packed last and clearly marked for immediate access on day one. Protect your belongings and save valuable time by trusting the professionals.
+     </p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+  <section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+   <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Safe Transportation Across the UAE</h2>
+   <div class="md:grid md:grid-cols-12 md:gap-12 items-center">
+    <div class="md:col-span-6 reveal">
+     <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      Transportation is the backbone of your move. Our modern fleet consists of temperature-controlled, fully-maintained trucks equipped to carry all household goods safely across the Emirates, from the bustle of Dubai and Abu Dhabi to the quieter Northern regions.
+     </p>
+     <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      Each vehicle is fitted with real-time GPS tracking, allowing our Project Coordinators (and you) to monitor progress every step of the way. Our drivers are not only experienced in local road regulations but are also trained in defensive driving techniques and secured cargo handling.
+     </p>
+     <p class="text-lg text-gray-700 leading-relaxed">
+      We use heavy-duty straps and proprietary cushioning systems inside the trucks to prevent shifting during transit. For customers requiring flexible dates, we also offer secure, climate-controlled short and long-term storage and warehousing options, ensuring your possessions are safe until your new home is ready.
+     </p>
+    </div>
+    <div class="md:col-span-6 mt-8 md:mt-0 reveal">
+     <img src="./images/home_relo2.jpg" alt="A Kind Movers truck driving on a highway in the UAE" class="rounded-xl shadow-2xl w-full h-auto object-cover hover-lift"/>
+    </div>
+   </div>
+  </div>
+ </section>
+
+<!-- Quote Section -->
+    <section id="quote" class="py-20 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Get Your Free Moving Quote</h2>
+                <p class="text-xl text-blue-100">Fill out the form below and we'll get back to you within 24 hours with a customized estimate.</p>
+            </div>
+            <form id="movingForm" class="bg-white rounded-xl shadow-xl p-6 md:p-8 text-gray-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="user" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="text" id="name" name="name" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="mail" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="email" id="email" name="email" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="phone" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="tel" id="phone" name="phone" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="move-type" class="block text-sm font-medium text-gray-700 mb-1">Move Type *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="truck" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <select id="move-type" name="move-type" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select move type</option>
+                                <option value="local">Local Move (within city)</option>
+                                <option value="long-distance">Long Distance (between UAE cities)</option>
+                                <option value="international">International (outside UAE)</option>
+                                <option value="office">Office/Business Move</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="from" class="block text-sm font-medium text-gray-700 mb-1">Moving From *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="map-pin" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="text" id="from" name="from" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Current address">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="to" class="block text-sm font-medium text-gray-700 mb-1">Moving To *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="map-pin" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="text" id="to" name="to" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="New address">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Moving Date *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="calendar" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="date" id="date" name="date" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="size" class="block text-sm font-medium text-gray-700 mb-1">Approx. Size *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-feather="box" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <select id="size" name="size" required class="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select size</option>
+                                <option value="studio">Studio Apartment (1-2 rooms)</option>
+                                <option value="1-bedroom">1 Bedroom (3-4 rooms)</option>
+                                <option value="2-bedroom">2 Bedroom (5-6 rooms)</option>
+                                <option value="3-bedroom">3+ Bedroom (7+ rooms)</option>
+                                <option value="villa">Villa/Large Home</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">Special Requirements</label>
+                    <textarea id="notes" name="notes" rows="3" class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Piano, fragile items, storage needs, etc."></textarea>
+                </div>
+                <div class="flex items-center mb-4">
+                    <input id="agree" name="agree" type="checkbox" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="agree" class="ml-2 block text-sm text-gray-700">I agree to receive a quote and communications from Kind Movers</label>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                    <i data-feather="send" class="mr-2 h-5 w-5"></i> Get Your Free Quote
+                </button>
+            </form>
+        </div>
+    </section>
+
+<footer class="bg-gray-800 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Logo & Description -->
+            <div>
+                <div class="flex items-center mb-4">
+                    <img src="./images/logo.png" alt="Kind Movers Logo" class="h-10 w-auto">
+                    <span class="ml-2 text-xl font-bold text-white">Kind Movers</span>
+                </div>
+                <p class="text-sm mb-4">Professional moving services with Swedish expertise, now serving the UAE.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-feather="facebook" class="h-5 w-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-feather="instagram" class="h-5 w-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-feather="linkedin" class="h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Menu / Services -->
+            <div>
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Our Services</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home-relocation" class="text-sm hover:text-white">Home Relocation</a></li>
+                    <li><a href="#office-relocation" class="text-sm hover:text-white">Office Relocation</a></li>
+                    <li><a href="#furniture-installation" class="text-sm hover:text-white">Furniture Installation</a></li>
+                    <li><a href="#cleaning-services" class="text-sm hover:text-white">Cleaning Services</a></li>
+                    <li><a href="#packing-services" class="text-sm hover:text-white">Packing & Materials</a></li>
+                    <li><a href="#special-moves" class="text-sm hover:text-white">Special Moves</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about-us" class="text-sm hover:text-white">About Us</a></li>
+                    <li><a href="#our-team" class="text-sm hover:text-white">Our Team</a></li>
+                    <li><a href="#careers" class="text-sm hover:text-white">Careers</a></li>
+                    <li><a href="#blog" class="text-sm hover:text-white">Blog</a></li>
+                    <li><a href="#contact" class="text-sm hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+              <img src="./images/ai_truck.png" alt="Moving Services" class="w-full h-full object-cover rounded-lg shadow-lg">
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-12 pt-8 border-t border-gray-700">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:order-2 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">Facebook</span>
+                        <i data-feather="facebook" class="h-6 w-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">Instagram</span>
+                        <i data-feather="instagram" class="h-6 w-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">Twitter</span>
+                        <i data-feather="twitter" class="h-6 w-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">LinkedIn</span>
+                        <i data-feather="linkedin" class="h-6 w-6"></i>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-xs text-gray-400">
+                        &copy; 2025 Kind Movers UAE. All rights reserved. Part of ZeroMax Movers AB, Stockholm, Sweden.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Success Message -->
+    <div id="formMessage" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-xl shadow-xl hidden z-50 max-w-sm w-full text-center transition-all duration-300">
+        <i data-feather="check-circle" class="inline h-5 w-5 mr-2"></i>
+        <span>Message sent successfully!</span>
+    </div>
+
+  <script>
+  AOS.init({ duration:1000, once:true });
+  feather.replace();
+  const revealElements=document.querySelectorAll('.reveal');
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('active'); } });
+  },{threshold:0.1});
+  revealElements.forEach(el=>observer.observe(el));
+
+  // Enhanced mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuContent = document.getElementById('mobile-menu-content');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuContent.classList.remove('translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenu() {
+            mobileMenuContent.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        function toggleMobileSubmenu() {
+            const submenu = document.getElementById('mobile-services');
+            const arrow = document.getElementById('mobile-services-arrow');
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Contact form handling
+        const movingForm = document.getElementById("movingForm");
+const contactForm = document.getElementById("contactForm");
+const messageBox = document.getElementById("formMessage");
+
+function showMessage(text, type = "success") {
+  messageBox.textContent = text;
+  if(type === "success"){
+    messageBox.classList.remove("bg-red-100","border-red-400","text-red-700");
+    messageBox.classList.add("bg-green-100","border-green-400","text-green-700");
+  } else {
+    messageBox.classList.remove("bg-green-100","border-green-400","text-green-700");
+    messageBox.classList.add("bg-red-100","border-red-400","text-red-700");
+  }
+  messageBox.classList.remove("hidden");
+  setTimeout(() => messageBox.classList.add("hidden"), 4000);
+}
+
+// Moving form handler
+if (movingForm) {
+  movingForm.addEventListener("submit", async e => {
+    e.preventDefault();
+    
+    const submitButton = movingForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.innerHTML;
+    submitButton.innerHTML = 'Sending...';
+    submitButton.disabled = true;
+    
+    const formData = new FormData(movingForm);
+    const data = {};
+    formData.forEach((v,k) => data[k] = v);
+    
+    try {
+      // Detect if we're running locally or on Netlify
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const functionUrl = isLocal ? 'http://localhost:8888/.netlify/functions/send-quote' : '/.netlify/functions/send-quote';
+      
+      const res = await fetch(functionUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const responseData = await res.json();
+      
+      if (res.ok) {
+        showMessage(responseData.message || "Quote request sent successfully!", "success");
+        movingForm.reset();
+      } else {
+        showMessage(responseData.error || "Failed to send quote request.", "error");
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      showMessage("Network error. Please check your connection and try again.", "error");
+    } finally {
+      submitButton.innerHTML = originalText;
+      submitButton.disabled = false;
+    }
+  });
+}
+ </script>
+ <script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

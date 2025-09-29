@@ -16,6 +16,10 @@ app.get('/about', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
+app.get('/home-relocation', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'house.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
