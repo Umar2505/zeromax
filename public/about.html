@@ -1056,37 +1056,68 @@
             storyDots[storyIndex].click();
         }, 5000);
 
-        // Enhanced mobile menu
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuContent = document.getElementById('mobile-menu-content');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        function moveTranslateElement() {
+  const desktopOnly = window.innerWidth >= 768;
+  const translateElemId = 'google_translate_element';
+  const translateElemMobileId = 'google_translate_element_mobile';
 
-        function openMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-            setTimeout(() => {
-                mobileMenuContent.classList.remove('translate-x-full');
-            }, 10);
-        }
+  const desktopElem = document.getElementById(translateElemId);
+  const mobileElem = document.getElementById(translateElemMobileId);
 
-        function closeMobileMenu() {
-            mobileMenuContent.classList.add('translate-x-full');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300);
-        }
+  if (desktopElem && mobileElem) {
+    if (desktopOnly) {
+      desktopElem.style.display = 'block';
+      mobileElem.style.display = 'none';
+      desktopElem.appendChild(document.querySelector('.goog-te-gadget'));
+    } else {
+      desktopElem.style.display = 'none';
+      mobileElem.style.display = 'block';
+      mobileElem.appendChild(document.querySelector('.goog-te-gadget'));
+    }
+  }
+}
 
-        function toggleMobileSubmenu() {
-            const submenu = document.getElementById('mobile-services');
-            const arrow = document.getElementById('mobile-services-arrow');
-            submenu.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-180');
-        }
+// --- Mobile Menu ---
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileMenuOverlay = document.querySelector('.nav-mobile-overlay');
 
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+// Show mobile menu
+mobileMenuToggle.addEventListener('click', () => {
+  mobileMenu.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  moveTranslateElement();
+});
+
+// Hide mobile menu (overlay or close btn)
+function closeMobileMenu() {
+  mobileMenu.classList.add('hidden');
+  document.body.style.overflow = '';
+  moveTranslateElement();
+}
+mobileMenuClose.addEventListener('click', closeMobileMenu);
+mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+// --- Mobile Submenu ---
+const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+const mobileServicesMenu = document.getElementById('mobile-services-menu');
+const mobileServicesIcon = document.getElementById('mobile-services-icon');
+
+mobileServicesToggle.addEventListener('click', () => {
+  const expanded = !mobileServicesMenu.classList.contains('hidden');
+  if (expanded) {
+    mobileServicesMenu.classList.add('hidden');
+    mobileServicesIcon.style.transform = '';
+  } else {
+    mobileServicesMenu.classList.remove('hidden');
+    mobileServicesIcon.style.transform = 'rotate(180deg)';
+  }
+});
+
+// --- Responsive handling for translate widget ---
+window.addEventListener('resize', moveTranslateElement);
+document.addEventListener('DOMContentLoaded', moveTranslateElement);
 
         // Contact form handling
         const movingForm = document.getElementById("movingForm");
