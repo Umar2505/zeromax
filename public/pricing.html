@@ -201,8 +201,8 @@
           </div>
         </div>
         <a href="/about" class="nav-item">About Us</a>
-        <a href="/pricing" class="nav-item">Pricing</a>
-        <a href="/contact" class="nav-item-active">Contact Us</a>
+        <a href="/pricing" class="nav-item-active">Pricing</a>
+        <a href="/contact" class="nav-item">Contact Us</a>
       </div>
 
       <!-- Translate only visible on desktop -->
@@ -232,7 +232,7 @@
           </button>
         </div>
         <nav class="space-y-1">
-          <a href="/" class="mobile-link-active">Home</a>
+          <a href="/" class="mobile-link">Home</a>
           <div class="mb-1">
             <button id="mobile-services-toggle" class="mobile-link w-full flex items-center justify-between">
               Moving Services
@@ -609,43 +609,70 @@
   <script>
   AOS.init({ duration:1000, once:true });
   feather.replace();
-  const revealElements=document.querySelectorAll('.reveal');
-  const observer=new IntersectionObserver(entries=>{
-   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('active'); } });
-  },{threshold:0.1});
-  revealElements.forEach(el=>observer.observe(el));
+  // Utility: Move translate element between navs when resizing
+function moveTranslateElement() {
+  const desktopOnly = window.innerWidth >= 768;
+  const translateElemId = 'google_translate_element';
+  const translateElemMobileId = 'google_translate_element_mobile';
 
-  // Enhanced mobile menu
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuContent = document.getElementById('mobile-menu-content');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const desktopElem = document.getElementById(translateElemId);
+  const mobileElem = document.getElementById(translateElemMobileId);
 
-        function openMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-            setTimeout(() => {
-                mobileMenuContent.classList.remove('translate-x-full');
-            }, 10);
-        }
+  if (desktopElem && mobileElem) {
+    if (desktopOnly) {
+      desktopElem.style.display = 'block';
+      mobileElem.style.display = 'none';
+      desktopElem.appendChild(document.querySelector('.goog-te-gadget'));
+    } else {
+      desktopElem.style.display = 'none';
+      mobileElem.style.display = 'block';
+      mobileElem.appendChild(document.querySelector('.goog-te-gadget'));
+    }
+  }
+}
 
-        function closeMobileMenu() {
-            mobileMenuContent.classList.add('translate-x-full');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300);
-        }
+// --- Mobile Menu ---
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileMenuOverlay = document.querySelector('.nav-mobile-overlay');
 
-        function toggleMobileSubmenu() {
-            const submenu = document.getElementById('mobile-services');
-            const arrow = document.getElementById('mobile-services-arrow');
-            submenu.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-180');
-        }
+// Show mobile menu
+mobileMenuToggle.addEventListener('click', () => {
+  mobileMenu.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  moveTranslateElement();
+});
 
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+// Hide mobile menu (overlay or close btn)
+function closeMobileMenu() {
+  mobileMenu.classList.add('hidden');
+  document.body.style.overflow = '';
+  moveTranslateElement();
+}
+mobileMenuClose.addEventListener('click', closeMobileMenu);
+mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+// --- Mobile Submenu ---
+const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+const mobileServicesMenu = document.getElementById('mobile-services-menu');
+const mobileServicesIcon = document.getElementById('mobile-services-icon');
+
+mobileServicesToggle.addEventListener('click', () => {
+  const expanded = !mobileServicesMenu.classList.contains('hidden');
+  if (expanded) {
+    mobileServicesMenu.classList.add('hidden');
+    mobileServicesIcon.style.transform = '';
+  } else {
+    mobileServicesMenu.classList.remove('hidden');
+    mobileServicesIcon.style.transform = 'rotate(180deg)';
+  }
+});
+
+// --- Responsive handling for translate widget ---
+window.addEventListener('resize', moveTranslateElement);
+document.addEventListener('DOMContentLoaded', moveTranslateElement);
+
 
         // Contact form handling
         const movingForm = document.getElementById("movingForm");
