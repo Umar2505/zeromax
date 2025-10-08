@@ -292,13 +292,15 @@ body {
   inset: 0;
   z-index: 0;
 }
+/* style.css: Corrected Rule */
 .nav-mobile-content {
   background: #fff;
   position: absolute;
   top: 0;
   right: 0;
   height: 100vh;
-  width: 19rem;
+  width: 80%; /* Takes up 80% of the viewport width */
+  max-width: 19rem; /* Ensures it never gets wider than the desktop size */
   box-shadow: -5px 0 24px -4px rgba(30,64,175,.09);
   z-index: 10;
   display: flex;
@@ -364,4 +366,38 @@ body {
 }
 .goog-te-combo:hover {
   border-color: #666;
+}
+
+/* style.css: Add this new section for Floating Buttons */
+
+/* Media query to make FABs less intrusive on extra small mobile screens (e.g., < 375px) */
+@media (max-width: 375px) {
+    
+    /* Target the main container (fixed bottom-6 right-6) */
+    .fixed.bottom-6.right-6 {
+        /* Reduce spacing: change bottom-6 (1.5rem/24px) to a smaller value like 1rem/16px */
+        bottom: 1rem !important; 
+        right: 1rem !important;
+        /* Reduce the gap between buttons from space-y-4 (1rem) to space-y-2 (0.5rem) */
+        row-gap: 0.5rem !important;
+    }
+    
+    /* Target the individual buttons (w-14 h-14) */
+    .fixed.bottom-6.right-6 > div > a,
+    .fixed.bottom-6.right-6 > a {
+        /* Reduce size: change w-14 h-14 (3.5rem/56px) to w-12 h-12 (3rem/48px) */
+        width: 3rem !important; 
+        height: 3rem !important;
+    }
+
+    /* Target the pulse ring (if you want it to also shrink) */
+    .pulse-ring {
+      width: 3rem !important;
+      height: 3rem !important;
+    }
+
+    /* OPTIONAL: Hide the hover text/tooltip on very small screens */
+    .fixed.bottom-6.right-6 .group-hover\:opacity-100 {
+        display: none !important;
+    }
 }
