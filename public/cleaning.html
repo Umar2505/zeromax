@@ -447,12 +447,6 @@ function googleTranslateElementInit() {
 
   const desktopElem = document.getElementById(translateElemId);
   const mobileElem = document.getElementById(translateElemMobileId);
-  const translateGadget = document.querySelector('.goog-te-gadget');
-
- if (!translateGadget) {
-// Gadget not loaded yet, exit the function.
- return;
-}
 
   if (desktopElem && mobileElem) {
     if (desktopOnly) {
